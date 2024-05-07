@@ -1,12 +1,14 @@
 _______________________________ 
-volver nativo index.html
+volver nativo login.html
 mejorar el diseño de registro.html
 SAMUEL
 _______________________________ 
 realizar el menu de incio
 JUAN DAVID
 _______________________________ 
-INTEGRAR EL BACKEN
 MECHAS
+volver el login funcional
+volver el registro funcional
+volver la autenticacion por correo funcional
 _______________________________ 
 
