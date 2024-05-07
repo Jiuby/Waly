@@ -1,3 +1,2 @@
-en registro.html cuando sale el apartado de acudiente todo el form por la parte de arriba desaparece
-y tambien mejorar su diseño xd
-volverlo nativo osea que tmbn funcione con celuco
+volver nativo index.html
+mejorar el diseño de registro.html
