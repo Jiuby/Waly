@@ -12,7 +12,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background: url("../img/r.jpg");
+  background: url("/static/img/R.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
