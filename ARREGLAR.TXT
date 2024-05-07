@@ -1,5 +1,5 @@
 _______________________________ 
-volver nativo index.html
+volver nativo login.html
 mejorar el diseño de registro.html
 SAMUEL
 _______________________________ 
