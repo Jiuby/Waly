@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'waly.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'waly',
+        'USER': 'root',  # El nombre de usuario predeterminado para MySQL en XAMPP
+        'PASSWORD': '',  # La contraseña predeterminada es generalmente vacía
+        'HOST': 'localhost',
+        'PORT': '3306',  # El puerto predeterminado de MySQL en XAMPP
     }
 }
 

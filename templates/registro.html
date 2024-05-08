@@ -10,77 +10,88 @@
 <body>
   <section class="container">
     <header>Formulario de registro</header>
-    <form action="#" class="form">
-      <div class="input-box">
+    <form action="#" class="form" id="registroForm">
+    <div class="input-box">
         <label>Nombre completo</label>
-        <input type="text" placeholder="Ingresa tu nombre completo" required />
-      </div>
+        <input type="text" name="nombre_completo" placeholder="Ingresa tu nombre completo" required />
+    </div>
 
-      <div class="input-box">
+    <div class="input-box">
         <label>Correo</label>
-        <input type="text" placeholder="Ingresa tu correo electronico" required />
-      </div>
+        <input type="email" name="correo" id="correo" placeholder="Ingresa tu correo electrónico" required />
+        <button type="button" id="enviarVerificacion">Enviar verificación</button>
+    </div>
 
-      <div class="column">
+    <div class="column">
         <div class="input-box">
-          <label>Usuario</label>
-          <input type="text" placeholder="Ingresa tu usuario" required />
+            <label>Usuario</label>
+            <input type="text" name="usuario" placeholder="Ingresa tu usuario" required />
         </div>
         <div class="input-box">
-          <label>Contraseña</label>
-          <input type="password" placeholder="Ingresa tu Clave" required />
+            <label>Contraseña</label>
+            <input type="password" name="contraseña" placeholder="Ingresa tu clave" required />
         </div>
         <div class="input-box">
-          <label>Fecha de nacimiento</label>
-          <input id="fechaNacimiento" type="date" placeholder="Ingresa tu fecha" required />
+            <label>Fecha de nacimiento</label>
+            <input id="fechaNacimiento" type="date" name="fecha_nacimiento" placeholder="Ingresa tu fecha" required />
         </div>
-      </div>
-      <div class="gender-box">
-        <h3>Genero</h3>
+    </div>
+
+    <div class="gender-box">
+        <h3>Género</h3>
         <div class="gender-option">
-          <div class="gender">
-            <input type="radio" id="check-male" name="gender" checked />
-            <label for="check-male">Masculino</label>
-          </div>
-          <div class="gender">
-            <input type="radio" id="check-female" name="gender" />
-            <label for="check-female">Femenino</label>
-          </div>
-          <div class="gender">
-            <input type="radio" id="check-other" name="gender" />
-            <label for="check-other">Prefiero no decirlo</label>
-          </div>
+            <div class="gender">
+                <input type="radio" id="check-male" name="genero" value="Masculino" checked />
+                <label for="check-male">Masculino</label>
+            </div>
+            <div class="gender">
+                <input type="radio" id="check-female" name="genero" value="Femenino" />
+                <label for="check-female">Femenino</label>
+            </div>
+            <div class="gender">
+                <input type="radio" id="check-other" name="genero" value="Prefiero no decirlo" />
+                <label for="check-other">Prefiero no decirlo</label>
+            </div>
         </div>
-      </div>
-      <div class="input-box address" style="display: none;">
-        <label>Acudiente</label>
-        <input type="text" placeholder="Ingresa el nombre de tu acudiente" required />
-        <input type="text" placeholder="Ingresa el correo de tu acudiente" required />
-      </div>
-      <button>Ingresar</button>
-      <br/>
-      <p class="register-text">Ya tienes cuenta? <a href="{% url 'login' %}">Unete</a></p>
+    </div>
 
-    </form>
+
+
+    <button type="submit">Ingresar</button>
+    <br />
+    <p class="register-text">¿Ya tienes cuenta? <a href="{% url 'login' %}">Únete</a></p>
+</form>
+
   </section>
+  
 
-  <script>
-    document.getElementById("fechaNacimiento").addEventListener("change", function() {
-      var fechaNacimiento = new Date(this.value);
-      var hoy = new Date();
-      var edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
-      var mes = hoy.getMonth() - fechaNacimiento.getMonth();
 
-      if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNacimiento.getDate())) {
-        edad--;
-      }
 
-      if (edad < 18) {
-        document.querySelector(".input-box.address").style.display = "block";
-      } else {
-        document.querySelector(".input-box.address").style.display = "none";
-      }
-    });
-  </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const formulario = document.getElementById('registroForm');
+            formulario.addEventListener('submit', function (event) {
+                event.preventDefault(); // Evitar que el formulario se envíe automáticamente
+    
+                const formData = new FormData(formulario);
+                const xhr = new XMLHttpRequest();
+    
+                xhr.open('POST', '/registro/');
+                xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    
+                xhr.onload = function () {
+                    if (xhr.status === 200) {
+                        alert('¡Registro exitoso! Se ha enviado un correo de verificación.');
+                        formulario.reset(); // Limpiar el formulario después de un registro exitoso
+                    } else {
+                        alert('Ha ocurrido un error durante el registro.');
+                    }
+                };
+    
+                xhr.send(formData);
+            });
+        });
+    </script>
+
 </body>
 </html>
