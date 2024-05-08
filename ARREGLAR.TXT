@@ -1,6 +1,7 @@
 _______________________________ 
 volver nativo login.html
 mejorar el diseño de registro.html
+arreglar pq no se ven los logos de las paginas
 SAMUEL
 _______________________________ 
 realizar el menu de incio
