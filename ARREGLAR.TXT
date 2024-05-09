@@ -1,7 +1,11 @@
 _______________________________ 
 volver nativo login.html
-mejorar el diseño de registro.html
+mejorar el diseño de registro.html (si esq se puede)
 arreglar pq no se ven los logos de las paginas
+realizar funcion para evitar usuarios repetidos y que le salga al usuario que escoja otro
+realizar funcion para decirle al usuario cuando el correo ya esta en uso
+
+
 SAMUEL
 _______________________________ 
 realizar el menu de incio
@@ -9,7 +13,6 @@ JUAN DAVID
 _______________________________ 
 MECHAS
 volver el login funcional
-volver el registro funcional
-volver la autenticacion por correo funcional
+
 _______________________________ 
 

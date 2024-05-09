@@ -68,6 +68,9 @@
 
 
     <script>
+        document.getElementById('correo').addEventListener('input', function (e) {
+    e.target.value = e.target.value.toLowerCase();
+});
         document.addEventListener('DOMContentLoaded', function () {
             const formulario = document.getElementById('registroForm');
             formulario.addEventListener('submit', function (event) {

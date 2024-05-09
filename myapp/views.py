@@ -1,15 +1,15 @@
-from django.contrib.auth.models import User
 from django.shortcuts import render
 from django.core.mail import send_mail
-from django.http import JsonResponse
-from django.core.mail import send_mail
-from django.template.loader import render_to_string
-from django.utils.html import strip_tags
 from .forms import RegistroForm
+from django.shortcuts import redirect
+from django.contrib.auth import authenticate, login
+
 # Create your views here.
 
 def login(request):
     return render(request, 'login.html')
+
+
 
 
 def registro(request):
@@ -30,5 +30,6 @@ def registro(request):
         form = RegistroForm()
     return render(request, 'registro.html', {'form': form})
 
-
+def inicio(request):
+    return render(request, 'inicio.html')
 
