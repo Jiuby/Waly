@@ -10,30 +10,30 @@
 <body>
   <section class="container">
     <header>Formulario de registro</header>
-    <form action="#" class="form" id="registroForm">
+    <form action="{% url 'registro' %}" class="form" id="registroForm" method="post">
+    {% csrf_token %}
     <div class="input-box">
         <label>Nombre completo</label>
-        <input type="text" name="nombre_completo" placeholder="Ingresa tu nombre completo" required />
+        <input type="text" name="nombre_completo" id="nombre_completo" placeholder="Ingresa tu nombre completo" required />
     </div>
 
     <div class="input-box">
         <label>Correo</label>
         <input type="email" name="correo" id="correo" placeholder="Ingresa tu correo electrónico" required />
-        <button type="button" id="enviarVerificacion">Enviar verificación</button>
     </div>
 
     <div class="column">
         <div class="input-box">
             <label>Usuario</label>
-            <input type="text" name="usuario" placeholder="Ingresa tu usuario" required />
+            <input type="text" name="usuario" id="usuario" placeholder="Ingresa tu usuario" required />
         </div>
         <div class="input-box">
             <label>Contraseña</label>
-            <input type="password" name="contraseña" placeholder="Ingresa tu clave" required />
+            <input type="password" name="contraseña" id="contraseña" placeholder="Ingresa tu clave" required />
         </div>
         <div class="input-box">
             <label>Fecha de nacimiento</label>
-            <input id="fechaNacimiento" type="date" name="fecha_nacimiento" placeholder="Ingresa tu fecha" required />
+            <input id="fechaNacimiento" type="date" name="fecha_nacimiento" id="fecha_nacimiento" placeholder="Ingresa tu fecha" required />
         </div>
     </div>
 
