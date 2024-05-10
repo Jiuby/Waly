@@ -1,7 +1,5 @@
 _______________________________ 
-
 volver el login funcional
-
 SAMUEL
 _______________________________ 
 realizar el menu de incio
@@ -15,3 +13,6 @@ realizar funcion para evitar usuarios repetidos y que le salga al usuario que es
 
 _______________________________ 
 
+opcional pa too
+
+ver y realizar tests
