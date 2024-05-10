@@ -1,11 +1,12 @@
 _______________________________ 
-volver nativo login.html
-mejorar el diseño de registro.html (si esq se puede)
+
 volver el login funcional
 
 SAMUEL
 _______________________________ 
 realizar el menu de incio
+volver nativo login.html
+mejorar el diseño de registro.html (si esq se puede)
 JUAN DAVID
 _______________________________ 
 MECHAS
