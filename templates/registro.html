@@ -75,22 +75,23 @@
             const formulario = document.getElementById('registroForm');
             formulario.addEventListener('submit', function (event) {
                 event.preventDefault(); // Evitar que el formulario se envíe automáticamente
-    
+
                 const formData = new FormData(formulario);
                 const xhr = new XMLHttpRequest();
-    
+
                 xhr.open('POST', '/registro/');
                 xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-    
+
                 xhr.onload = function () {
-                    if (xhr.status === 200) {
-                        alert('¡Registro exitoso! Se ha enviado un correo de verificación.');
-                        formulario.reset(); // Limpiar el formulario después de un registro exitoso
+                    const response = JSON.parse(xhr.responseText);
+                    if (response.success) {
+                        alert(response.message);
+                        formulario.reset();
                     } else {
-                        alert('Ha ocurrido un error durante el registro.');
+                        alert(response.message);
                     }
                 };
-    
+
                 xhr.send(formData);
             });
         });

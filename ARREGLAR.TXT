@@ -1,7 +1,5 @@
 _______________________________ 
 volver el login funcional
-realizar funcion para decirle al usuario cuando el correo ya esta en uso
-realizar funcion para evitar usuarios repetidos y que le salga al usuario que escoja otro
 SAMUEL
 _______________________________ 
 realizar el menu de incio
