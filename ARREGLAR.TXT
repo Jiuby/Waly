@@ -1,5 +1,5 @@
 _______________________________ 
-volver el login funcional
+cuando el usuario agrege el login que le indique si tiene cuenta o nonas
 SAMUEL
 _______________________________ 
 realizar el menu de incio
