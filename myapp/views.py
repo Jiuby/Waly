@@ -6,18 +6,7 @@ from django.contrib.auth import authenticate, login
 from django.http import JsonResponse, HttpResponse
 # Create your views here.
 
-"""def login_view(request):
-    if request.method == 'POST':
-        print(request.POST)
-        usuario = request.POST['usuario']
-        contraseña = request.POST['contraseña']
-        user = authenticate(request, username=usuario, password=contraseña)
-        if user is not None:
-            login(request, user)
-            return redirect('inicio')
-        else:
-            return render(request, 'login.html', {'error': 'Usuario o contraseña incorrectos.'})
-    return render(request, 'login.html')"""
+
 
 def login_view(request):
     if request.method == 'POST':
