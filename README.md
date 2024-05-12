@@ -15,7 +15,7 @@ Para desplegar el proyecto primero copiarlo
 ```
 Luego instalar las dependencias
 ```bash
-  python pip install -r requirements.txt
+  pip install -r requirements.txt
 ```
 luego tener instalado XAMPP y crear una base de datos llamada waly y en la consola del proyecto escribir lo siguiente
 
