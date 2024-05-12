@@ -1,18 +1,39 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
-from .forms import RegistroForm
+from .forms import RegistroForm, LoginForm
 from django.shortcuts import redirect
 from django.contrib.auth import authenticate, login
-from django.http import JsonResponse
-
-
+from django.http import JsonResponse, HttpResponse
 # Create your views here.
 
-def login(request):
-    return render(request, 'login.html')
+"""def login_view(request):
+    if request.method == 'POST':
+        print(request.POST)
+        usuario = request.POST['usuario']
+        contraseña = request.POST['contraseña']
+        user = authenticate(request, username=usuario, password=contraseña)
+        if user is not None:
+            login(request, user)
+            return redirect('inicio')
+        else:
+            return render(request, 'login.html', {'error': 'Usuario o contraseña incorrectos.'})
+    return render(request, 'login.html')"""
 
-
-
+def login_view(request):
+    if request.method == 'POST':
+        form = LoginForm(data=request.POST)
+        if form.is_valid():
+            usuario = form.cleaned_data.get('usuario')
+            contraseña = form.cleaned_data.get('contraseña')
+            user = authenticate(request, username=usuario, password=contraseña)
+            if user is not None:
+                login(request, user)
+                return JsonResponse({'success': False, 'message': 'Usuario o contraseña incorrectos.'})
+            else:
+                return JsonResponse({'success': True, 'message': 'Usuario o contraseña Correcta.'})
+    else:
+        form = LoginForm()
+    return render(request, 'login.html', {'form': form})
 
 def registro(request):
     if request.method == 'POST':

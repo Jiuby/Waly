@@ -17,3 +17,16 @@ class RegistroForm(forms.ModelForm):
         if Usuario.objects.filter(usuario=usuario).exists():
             self.add_error('usuario', "El nombre de usuario ya está en uso.")
         return usuario
+
+
+class LoginForm(forms.Form):
+    usuario = forms.CharField()
+    contraseña = forms.CharField(widget=forms.PasswordInput)
+
+    def clean(self):
+        cleaned_data = super().clean()
+        usuario = cleaned_data.get('usuario')
+        contraseña = cleaned_data.get('contraseña')
+        if not Usuario.objects.filter(usuario=usuario, contraseña=contraseña).exists():
+            self.add_error('usuario', 'Usuario o contraseña incorrectos.')
+        return cleaned_data
