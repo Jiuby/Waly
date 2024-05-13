@@ -11,6 +11,7 @@ MECHAS
 que el login lleve a inicio.html y muestre el nombre de la persona
 pasarlo a una base de datos en la nube (MySQL AZURE)
 Realizar el deploy en un servidor
+Realizar la seguridad cuando el usuario intenta acceder a inicio.html sin haberse logeado
 _______________________________ 
 
 opcional pa too
