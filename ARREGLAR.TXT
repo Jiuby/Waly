@@ -8,7 +8,9 @@ mejorar el diseño de registro.html (si esq se puede)
 JUAN DAVID
 _______________________________ 
 MECHAS
-que el login lleve a inicio.html
+que el login lleve a inicio.html y muestre el nombre de la persona
+pasarlo a una base de datos en la nube (MySQL AZURE)
+Realizar el deploy en un servidor
 _______________________________ 
 
 opcional pa too
