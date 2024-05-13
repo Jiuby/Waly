@@ -1,7 +1,6 @@
 _______________________________ 
 cuando el usuario agrege el login que le indique si tiene cuenta o nonas
 SAMUEL
-Nigg
 _______________________________ 
 realizar el menu de incio
 volver nativo login.html
@@ -19,3 +18,5 @@ _______________________________
 opcional pa too
 
 ver y realizar tests
+
+Niiiiiggggeria
