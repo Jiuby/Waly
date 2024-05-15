@@ -13,21 +13,25 @@ def login_view(request):
         if form.is_valid():
             usuario = form.cleaned_data.get('usuario')
             contraseña = form.cleaned_data.get('contraseña')
+            #set_password
+
             user = authenticate(request, username=usuario, password=contraseña)
             if user is not None:
                 login(request, user)
-                return JsonResponse({'success': False, 'message': 'Usuario o contraseña incorrectos.'})
-            else:
                 return JsonResponse({'success': True, 'message': 'Usuario o contraseña Correcta.'})
+            else:
+                return JsonResponse({'success': False, 'message': 'Usuario o contraseña incorrectos.'})
     else:
         form = LoginForm()
     return render(request, 'login.html', {'form': form})
-
 def registro(request):
     if request.method == 'POST':
         form = RegistroForm(request.POST)
         if form.is_valid():
-            usuario = form.save()
+            usuario = form.save(commit=False)  # No guardes el usuario todavía
+            password = form.cleaned_data.get('contraseña')
+            usuario.set_password(password)  # Hashea y guarda la contraseña
+            usuario.save()  # Ahora puedes guardar el usuario
 
             # Enviar correo de verificación
             subject = 'Bienvenido a Waly'
