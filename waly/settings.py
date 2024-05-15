@@ -139,3 +139,5 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'walymedellin@gmail.com'  # Tu correo electrónico
 EMAIL_HOST_PASSWORD = 'ekqi mfmu srce ggiq'  # Tu contraseña
 AUTH_USER_MODEL = 'myapp.Usuario'
+
+LOGIN_URL = 'login'

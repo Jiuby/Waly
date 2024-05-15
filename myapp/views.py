@@ -1,9 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from .forms import RegistroForm, LoginForm
-from django.shortcuts import redirect
 from django.contrib.auth import authenticate, login
 from django.http import JsonResponse, HttpResponse
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 
 
@@ -13,17 +15,20 @@ def login_view(request):
         if form.is_valid():
             usuario = form.cleaned_data.get('usuario')
             contraseña = form.cleaned_data.get('contraseña')
-            #set_password
 
             user = authenticate(request, username=usuario, password=contraseña)
             if user is not None:
                 login(request, user)
-                return JsonResponse({'success': True, 'message': 'Usuario o contraseña Correcta.'})
+                messages.success(request, 'Usuario o contraseña Correcta.')
+                return redirect('inicio')  # Redirige a la vista 'inicio'
             else:
-                return JsonResponse({'success': False, 'message': 'Usuario o contraseña incorrectos.'})
+                messages.error(request, 'Usuario o contraseña incorrectos.')
     else:
         form = LoginForm()
     return render(request, 'login.html', {'form': form})
+
+
+
 def registro(request):
     if request.method == 'POST':
         form = RegistroForm(request.POST)
@@ -48,6 +53,6 @@ def registro(request):
     else:
         form = RegistroForm()
     return render(request, 'registro.html', {'form': form})
+@login_required(login_url='login')  # Redirige a 'login' si el usuario no ha iniciado sesión
 def inicio(request):
-    return render(request, 'inicio.html')
-
+    return render(request, 'inicio.html', {'nombre_completo': request.user.nombre_completo})
