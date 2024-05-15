@@ -11,6 +11,7 @@ _______________________________
 MECHAS
 pasarlo a una base de datos en la nube (MySQL AZURE)
 Realizar el deploy en un servidor
+realizar que despues del login muestre el nombre en el html
 _______________________________
 
 opcional pa too
