@@ -6,6 +6,7 @@ _______________________________
 realizar el menu de incio
 volver nativo login.html
 mejorar el diseño de registro.html (si esq se puede)
+agregar una pantalla de loader a login y registro https://uiverse.io/loaders
 JUAN DAVID
 _______________________________ 
 MECHAS
