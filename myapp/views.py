@@ -24,6 +24,8 @@ def login_view(request):
                 return redirect('inicio')  # Redirige a la vista 'inicio'
             else:
                 messages.error(request, 'Usuario o contraseña incorrectos.')
+        else:
+            messages.error(request, 'Usuario o contraseña incorrectos.')  # Añade este mensaje
     else:
         form = LoginForm()
 
