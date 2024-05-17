@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate, login
 from django.http import JsonResponse, HttpResponse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+import re
 
 # Create your views here.
 
@@ -35,6 +36,12 @@ def registro(request):
         if form.is_valid():
             usuario = form.save(commit=False)  # No guardes el usuario todavía
             password = form.cleaned_data.get('contraseña')
+
+            # Verificar si la contraseña cumple con los requisitos
+            password_regex = re.compile(r'^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6,}$')
+            if not password_regex.match(password):
+                return JsonResponse({'success': False, 'message': 'La contraseña debe tener al menos 6 caracteres, 1 mayúscula y 1 número'})
+
             usuario.set_password(password)  # Hashea y guarda la contraseña
             usuario.save()  # Ahora puedes guardar el usuario
 
@@ -53,6 +60,7 @@ def registro(request):
     else:
         form = RegistroForm()
     return render(request, 'registro.html', {'form': form})
+
 @login_required(login_url='login')  # Redirige a 'login' si el usuario no ha iniciado sesión
 def inicio(request):
     return render(request, 'inicio.html', {'nombre_completo': request.user.nombre_completo})
