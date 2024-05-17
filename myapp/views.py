@@ -20,7 +20,6 @@ def login_view(request):
             user = authenticate(request, username=usuario, password=contraseña)
             if user is not None:
                 login(request, user)
-                messages.success(request, 'Usuario o contraseña Correcta.')
                 return redirect('inicio')  # Redirige a la vista 'inicio'
             else:
                 messages.error(request, 'Usuario o contraseña incorrectos.')
