@@ -1,5 +1,5 @@
 _______________________________ 
-cuando el usuario agrege el login que le indique si tiene cuenta o nonas
+pop up cuando el inicio de sesion sea incorrecto
 Realizar la seguridad cuando el usuario intenta acceder a inicio.html sin haberse logeado
 SAMUEL
 _______________________________ 
@@ -10,6 +10,9 @@ agregar una pantalla de loader a login y registro https://uiverse.io/loaders
 JUAN DAVID
 _______________________________ 
 MECHAS
+loader de pantalla de carga en registro
+pop up bootstrap en registro.html
+pop up bootstrap en login.html
 pasarlo a una base de datos en la nube (MySQL AZURE)
 Realizar el deploy en un servidor
 _______________________________
