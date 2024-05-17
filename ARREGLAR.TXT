@@ -1,5 +1,4 @@
 _______________________________ 
-pop up cuando el inicio de sesion sea incorrecto
 Realizar la seguridad cuando el usuario intenta acceder a inicio.html sin haberse logeado
 SAMUEL
 _______________________________ 
