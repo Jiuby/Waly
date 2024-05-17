@@ -117,41 +117,69 @@ window.addEventListener('load', function () {
     cover.style.width = '100%';
     cover.style.height = '100%';
     cover.style.backgroundColor = '#fdfbec';
-    cover.style.zIndex = '10000';
     cover.style.display = 'flex';
     cover.style.justifyContent = 'center';
     cover.style.alignItems = 'center';
-
-    // Crear el loader y agregarlo al div
+    cover.style.animation = 'disappear 1.5s forwards';
+    
+    // Crear el div del loader
     var loader = document.createElement('div');
     loader.className = 'loader';
     loader.style.display = 'inline-grid';
-    loader.style.width = '27px';
-    loader.style.height = '27px';
-    loader.style.background = 'conic-gradient(from 135deg at top, #000 90deg, #0000 0) 12.5% 100%, conic-gradient(from -45deg at bottom, #000 90deg, #0000 0) 12.5% 100%';
-    loader.style.backgroundSize = '20% 50%';
-    loader.style.backgroundRepeat = 'repeat-x';
-    loader.style.clipPath = 'inset(0 60% 0 0)';
-    loader.style.animation = 'l7 .8s infinite linear alternate';
-    cover.appendChild(loader);
+    
+    // Crear los pseudo-elementos :before y :after con JS
+    var loaderBefore = document.createElement('div');
+    var loaderAfter = document.createElement('div');
+    
+    [loaderBefore, loaderAfter].forEach(function (pseudo) {
+        pseudo.style.content = '""';
+        pseudo.style.height = '27px';
+        pseudo.style.aspectRatio = '5';
+        pseudo.style.setProperty('--c', '#000 90deg, #0000 0');
+        pseudo.style.background = `
+            conic-gradient(from 135deg at top, var(--c)),
+            conic-gradient(from -45deg at bottom, var(--c)) 12.5% 100%
+        `;
+        pseudo.style.backgroundSize = '20% 50%';
+        pseudo.style.backgroundRepeat = 'repeat-x';
+        pseudo.style.clipPath = 'inset(0 60% 0 0)';
+        pseudo.style.animation = 'l7 0.8s infinite linear alternate';
+    });
 
-    // Agregar el div al cuerpo del documento
+    // Añadir estilos específicos para :after
+    loaderAfter.style.animationDirection = 'alternate-reverse';
+
+    // Añadir los pseudo-elementos al loader
+    loader.appendChild(loaderBefore);
+    loader.appendChild(loaderAfter);
+    
+    // Añadir el loader al contenedor de la pantalla completa
+    cover.appendChild(loader);
+    
+    // Añadir el contenedor al body
     document.body.appendChild(cover);
 
-    // Eliminar el div después de 2.5 segundos
-    setTimeout(function () {
-        cover.remove();
-    }, 2500);
+    // Definir las animaciones en JS
+    var styleSheet = document.createElement('style');
+    styleSheet.type = 'text/css';
+    styleSheet.innerText = `
+        @keyframes disappear {
+            99% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        @keyframes l7 {
+            to { clip-path: inset(0 0 0 60%); }
+        }
+    `;
+    document.head.appendChild(styleSheet);
 });
 
-// Agregar la animación al loader
-var style = document.createElement('style');
-style.innerHTML = `
-  @keyframes l7 {
-    to {clip-path: inset(0 0 0 60%)}
-  }
-`;
-document.head.appendChild(style);
     </script>
 <div class="loader"></div>
 
