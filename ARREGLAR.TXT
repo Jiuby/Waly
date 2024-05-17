@@ -6,11 +6,10 @@ _______________________________
 realizar el menu de incio
 volver nativo login.html
 mejorar el diseño de registro.html (si esq se puede)
-agregar una pantalla de loader a login y registro https://uiverse.io/loaders
+ver si se puede mejorar el loader de registro xd https://uiverse.io/loaders
 JUAN DAVID
 _______________________________ 
 MECHAS
-loader de pantalla de carga en registro
 pasarlo a una base de datos en la nube (MySQL AZURE)
 Realizar el deploy en un servidor
 _______________________________
