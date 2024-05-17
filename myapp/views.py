@@ -26,6 +26,7 @@ def login_view(request):
                 messages.error(request, 'Usuario o contraseña incorrectos.')
     else:
         form = LoginForm()
+
     return render(request, 'login.html', {'form': form})
 
 
@@ -60,6 +61,9 @@ def registro(request):
     else:
         form = RegistroForm()
     return render(request, 'registro.html', {'form': form})
+
+
+
 
 @login_required(login_url='login')  # Redirige a 'login' si el usuario no ha iniciado sesión
 def inicio(request):

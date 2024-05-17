@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Registro | Waly</title>
   <link rel="stylesheet" href="/static/css/registro.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
   <section class="container">
@@ -20,6 +21,7 @@
     <div class="input-box">
         <label>Correo</label>
         <input type="email" name="correo" id="correo" placeholder="Ingresa tu correo electrónico" required />
+        <div id="correoError" class="alert alert-danger d-none text-danger"></div> <!-- Aquí se mostrará el mensaje de error -->
     </div>
 
     <div class="column">
@@ -61,36 +63,51 @@
     <br />
     <p class="register-text">¿Ya tienes cuenta? <a href="{% url 'login' %}">Únete</a></p>
 </form>
+        <div id="errorCard" class="alert alert-danger d-none position-fixed" style="left: 0;"></div>
 
   </section>
     <script>
-        document.getElementById('correo').addEventListener('input', function (e) {
-    e.target.value = e.target.value.toLowerCase();
-});
         document.addEventListener('DOMContentLoaded', function () {
-            const formulario = document.getElementById('registroForm');
-            formulario.addEventListener('submit', function (event) {
-                event.preventDefault(); // Evitar que el formulario se envíe automáticamente
+    const formulario = document.getElementById('registroForm');
+    formulario.addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent the form from automatically submitting
 
-                const formData = new FormData(formulario);
-                const xhr = new XMLHttpRequest();
+        const formData = new FormData(formulario);
+        const xhr = new XMLHttpRequest();
 
-                xhr.open('POST', '/registro/');
-                xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        xhr.open('POST', '/registro/');
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 
-                xhr.onload = function () {
-                    const response = JSON.parse(xhr.responseText);
-                    if (response.success) {
-                        alert(response.message);
-                        formulario.reset();
-                    } else {
-                        alert(response.message);
-                    }
-                };
+        xhr.onload = function () {
+            const response = JSON.parse(xhr.responseText);
+            if (response.success) {
+                alert(response.message);
+                formulario.reset();
+            } else {
+                // Remove existing alerts
+                const existingAlert = document.querySelector('.alert');
+                if (existingAlert) existingAlert.remove();
 
-                xhr.send(formData);
-            });
-        });
+                // Create a new Bootstrap alert
+                const alertDiv = document.createElement('div');
+                alertDiv.className = 'alert alert-danger position-fixed';
+                alertDiv.style.cssText = 'left: 0; bottom: 0; width: 500px;';
+                alertDiv.role = 'alert';
+                alertDiv.textContent = response.message;
+
+                // Append the alert to the body
+                document.body.appendChild(alertDiv);
+
+                // Remove the alert after 3 seconds
+                setTimeout(function() {
+                    document.body.removeChild(alertDiv);
+                }, 3000);
+            }
+        };
+
+        xhr.send(formData);
+    });
+});
     </script>
 
 </body>

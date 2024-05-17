@@ -11,17 +11,10 @@ JUAN DAVID
 _______________________________ 
 MECHAS
 loader de pantalla de carga en registro
-pop up bootstrap en registro.html
-pop up bootstrap en login.html
 pasarlo a una base de datos en la nube (MySQL AZURE)
 Realizar el deploy en un servidor
 _______________________________
 
-opcional pa too
-
-ver y realizar tests
-
-Niiiiigggeria
 
 A FUTURO QUE COMENZAR A REALIZAR?
 ___________________________________________
