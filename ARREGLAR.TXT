@@ -1,10 +1,14 @@
 _______________________________ 
 
 SAMUEL
+
+dar ideas para configuracion
+dar ideas para ayuda
 _______________________________ 
 mejorar el diseño de registro.html (si esq se puede)
 pagina 404
 ver que se puede agregar al menu de inico pa que no se vea tan solo xd
+(cuando terminemos todo el proyecto realizar pagina de presentacion del proyecto cojer una plantilla de bootstrap)
 
 catalina
 _______________________________
