@@ -3,8 +3,9 @@ _______________________________
 SAMUEL
 _______________________________ 
 mejorar el diseño de registro.html (si esq se puede)
+pagina 404
 JUAN DAVID
-_______________________________ 
+_______________________________
 MECHAS
 realizar el menu de incio
 pasarlo a una base de datos en la nube (MySQL AZURE)
