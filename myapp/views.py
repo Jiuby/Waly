@@ -24,7 +24,7 @@ def login_view(request):
             else:
                 messages.error(request, 'Usuario o contraseña incorrectos.')
         else:
-            messages.error(request, 'Usuario o contraseña incorrectos.')  # Añade este mensaje
+            messages.error(request, 'Usuario o Contraseña Incorrecta.')  # Añade este mensaje
     else:
         form = LoginForm()
 
