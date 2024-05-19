@@ -4,6 +4,10 @@ SAMUEL
 
 dar ideas para configuracion
 dar ideas para ayuda
+asignar un limite de caracteres de nombre
+asignar un limite de caracteres de correo
+asignar un limite y minimo de caracteres de usuario
+
 _______________________________ 
 mejorar el diseño de registro.html (si esq se puede)
 pagina 404
