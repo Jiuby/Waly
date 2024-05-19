@@ -15,6 +15,7 @@
 <!-- partial:index.partial.html -->
 <form id="loginForm" action="{% url 'login' %}" method="post">
     {% csrf_token %}
+
 	<div class="svgContainer">
 		<div>
 			<svg class="mySVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 200">
@@ -120,7 +121,7 @@
 			</svg>
 		</div>
 	</div>
-	
+
 	<div class="inputGroup inputGroup1">
 		<label for="loginEmail" id="loginEmailLabel">Usuario</label>
 		<input type="text" id="loginEmail" maxlength="254" name="usuario" />
@@ -133,6 +134,7 @@
 			<input id="showPasswordCheck" type="checkbox"/>
 			<div class="indicator"></div>
 		</label>
+    </ul>
 	</div>
 	<div class="inputGroup inputGroup3">
 		<button id="login">Inicia sesión</button>
@@ -156,8 +158,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Create a new Bootstrap alert
             const alertDiv = document.createElement('div');
-            alertDiv.className = 'alert alert-danger position-fixed';
-            alertDiv.style.cssText = 'left: -5; bottom: 0; width: 500px;';
+            alertDiv.className = 'alert alert-danger position-fixed text-center';
+            alertDiv.style.cssText = 'top: 0; left: 50%; transform: translateX(-50%); width: 500px;';
             alertDiv.role = 'alert';
             alertDiv.textContent = "{{ message.tags }}: {{ message }}";
 

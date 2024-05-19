@@ -1,5 +1,6 @@
 _______________________________ 
 Realizar la seguridad cuando el usuario intenta acceder a inicio.html sin haberse logeado
+(
 SAMUEL
 _______________________________ 
 realizar el menu de incio
