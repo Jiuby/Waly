@@ -1,14 +1,12 @@
 _______________________________ 
-Realizar la seguridad cuando el usuario intenta acceder a inicio.html sin haberse logeado
-(
+
 SAMUEL
 _______________________________ 
-realizar el menu de incio
-volver nativo login.html
 mejorar el diseño de registro.html (si esq se puede)
 JUAN DAVID
 _______________________________ 
 MECHAS
+realizar el menu de incio
 pasarlo a una base de datos en la nube (MySQL AZURE)
 Realizar el deploy en un servidor
 _______________________________
