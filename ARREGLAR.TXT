@@ -1,11 +1,11 @@
 _______________________________ 
 
 SAMUEL
-
+pantalla de carga mientras se envia el correo de registro
 dar ideas para configuracion
 dar ideas para ayuda
-agregar faq
-https://codepen.io/Nelmau/pen/rNbEMXd
+agregar contenido faq
+ver si se puede mejorar cuando se baja uno de los menus del faq que se mueve  el menu
 
 _______________________________ 
 pagina 404

@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FAQ | Waly</title>
-       <link rel="shortcut icon" href="{%  static 'img/logo.png' %}">
+    <link rel="shortcut icon" href="{% static 'img/logo.png' %}">
     <!-- STYLESHEET -->
     <link rel="stylesheet" href="/static/css/inicio.css">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -15,9 +15,127 @@
         .text {
             color: white;
         }
+
+        /* FAQ Styles */
+        @import url('https://fonts.googleapis.com/css?family=Hind:300,400&display=swap');
+
+        .faq-container {
+          margin: 0 auto;
+          padding: 4rem;
+          width: 48rem;
+        }
+
+        .faq-accordion .faq-accordion-item {
+          border-bottom: 1px solid #e5e5e5;
+        }
+
+        .faq-accordion .faq-accordion-item button[aria-expanded='true'] {
+          border-bottom: 1px solid #03b5d2;
+        }
+
+        .faq-accordion button {
+          position: relative;
+          display: block;
+          text-align: left;
+          width: 100%;
+          padding: 1em 0;
+          color: #7288a2;
+          font-size: 1.15rem;
+          font-weight: 400;
+          border: none;
+          background: none;
+          outline: none;
+        }
+
+        .faq-accordion button:hover,
+        .faq-accordion button:focus {
+          cursor: pointer;
+          color: #03b5d2;
+        }
+
+        .faq-accordion button:hover::after,
+        .faq-accordion button:focus::after {
+          cursor: pointer;
+          color: #03b5d2;
+          border: 1px solid #03b5d2;
+        }
+
+        .faq-accordion button .faq-accordion-title {
+          padding: 1em 1.5em 1em 0;
+        }
+
+        .faq-accordion button .faq-icon {
+          display: inline-block;
+          position: absolute;
+          top: 18px;
+          right: 0;
+          width: 22px;
+          height: 22px;
+          border: 1px solid;
+          border-radius: 22px;
+        }
+
+        .faq-accordion button .faq-icon::before {
+          display: block;
+          position: absolute;
+          content: '';
+          top: 9px;
+          left: 5px;
+          width: 10px;
+          height: 2px;
+          background: currentColor;
+        }
+        .faq-accordion button .faq-icon::after {
+          display: block;
+          position: absolute;
+          content: '';
+          top: 5px;
+          left: 9px;
+          width: 2px;
+          height: 10px;
+          background: currentColor;
+        }
+
+        .faq-accordion button[aria-expanded='true'] {
+          color: #03b5d2;
+        }
+        .faq-accordion button[aria-expanded='true'] .faq-icon::after {
+          width: 0;
+        }
+        .faq-accordion button[aria-expanded='true'] + .faq-accordion-content {
+          opacity: 1;
+          max-height: 9em;
+          transition: all 200ms linear;
+          will-change: opacity, max-height;
+        }
+        .faq-accordion .faq-accordion-content {
+          opacity: 0;
+          max-height: 0;
+          overflow: hidden;
+          transition: opacity 200ms linear, max-height 200ms linear;
+          will-change: opacity, max-height;
+        }
+        .faq-accordion .faq-accordion-content p {
+          font-size: 1rem;
+          font-weight: 300;
+          margin: 2em 0;
+        }
+
+        /* Sticky Sidebar */
+        .sidebar {
+          position: -webkit-sticky; /* For Safari */
+          position: sticky;
+          top: 0;
+          z-index: 10;
+        }
+
+        /* Optional sticky class for JavaScript support */
+        .sticky {
+          position: fixed;
+          top: 0;
+          z-index: 10;
+        }
     </style>
-
-
     <title>Sidebar</title>
   </head>
   <body>
@@ -184,9 +302,58 @@
         </div>
       </div>
       <div class="credits">
-        {% block content %}
+                  {% block content %}
+        <div class="faq-container">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-accordion">
+            <div class="faq-accordion-item">
+              <button id="faq-accordion-button-1" aria-expanded="false">
+                <span class="faq-accordion-title">À quelle fréquence doit-on remplacer son chauffe-eau?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-accordion-content">
+                <p>
+                  Aux 10 à 12 ans. Avec les années, la rouille causée par l’eau endommage le contenant de métal. Soyez aux aguets : l’apparition des premiers signes de rouille, d'humidité au toucher du réservoir et le changement de coloration de l'eau chaude (rougeâtre) sont autant de signes avant-coureurs que la durée de vie de votre chauffe-eau arrive à échéance.
+                </p>
+              </div>
+            </div>
+            <div class="faq-accordion-item">
+              <button id="faq-accordion-button-2" aria-expanded="false">
+                <span class="faq-accordion-title">Why is the sky blue?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-accordion-content">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
+                </p>
+              </div>
+            </div>
+                          <div class="faq-accordion-item">
+              <button id="faq-accordion-button-2" aria-expanded="false">
+                <span class="faq-accordion-title">Why is the sky blue?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-accordion-content">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
+                </p>
+              </div>
+            </div>
+                          <div class="faq-accordion-item">
+              <button id="faq-accordion-button-2" aria-expanded="false">
+                <span class="faq-accordion-title">Why is the sky blue?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+              <div class="faq-accordion-content">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.
+                </p>
+              </div>
+            </div>
+            <!-- Additional FAQ items ... -->
+          </div>
+        </div>
         {% endblock %}
-
       </div>
     </div>
 
@@ -196,7 +363,7 @@
       integrity="sha512-8Z5++K1rB3U+USaLKG6oO8uWWBhdYsM3hmdirnOEWp8h2B1aOikj5zBzlXs8QOrvY9OxEnD2QDkbSKKpfqcIWw=="
       crossorigin="anonymous"
     ></script>
-    <script  src="/static/js/inicio.js"></script>
+    <script src="/static/js/inicio.js"></script>
     <script>
         window.addEventListener('load', function () {
             // Crear un div que cubra toda la pantalla
@@ -215,59 +382,45 @@
             // Crear el div del loader
             var loader = document.createElement('div');
             loader.className = 'loader';
-            loader.style.display = 'inline-grid';
-
-            // Crear los pseudo-elementos :before y :after con JS
-            var loaderBefore = document.createElement('div');
-            var loaderAfter = document.createElement('div');
-
-            [loaderBefore, loaderAfter].forEach(function (pseudo) {
-                pseudo.style.content = '""';
-                pseudo.style.height = '27px';
-                pseudo.style.aspectRatio = '5';
-                pseudo.style.setProperty('--c', '#000 90deg, #0000 0');
-                pseudo.style.background = `
-                    conic-gradient(from 135deg at top, var(--c)),
-                    conic-gradient(from -45deg at bottom, var(--c)) 12.5% 100%
-                `;
-                pseudo.style.backgroundSize = '20% 50%';
-                pseudo.style.backgroundRepeat = 'repeat-x';
-                pseudo.style.clipPath = 'inset(0 60% 0 0)';
-                pseudo.style.animation = 'l7 0.8s infinite linear alternate';
-            });
-
-            // Añadir estilos específicos para :after
-            loaderAfter.style.animationDirection = 'alternate-reverse';
-
-            // Añadir los pseudo-elementos al loader
-            loader.appendChild(loaderBefore);
-            loader.appendChild(loaderAfter);
-
-            // Añadir el loader al contenedor de la pantalla completa
             cover.appendChild(loader);
 
-            // Añadir el contenedor al body
+            // Añadir el div a la página
             document.body.appendChild(cover);
 
-            // Definir las animaciones en JS
+            // Crear el estilo para la animación de desvanecimiento
             var styleSheet = document.createElement('style');
             styleSheet.type = 'text/css';
             styleSheet.innerText = `
                 @keyframes disappear {
-                    99% {
-                        opacity: 1;
-                    }
-                    100% {
-                        opacity: 0;
-                        visibility: hidden;
-                    }
-                }
-
-                @keyframes l7 {
-                    to { clip-path: inset(0 0 0 60%); }
+                    0% { opacity: 1; }
+                    100% { opacity: 0; display: none; }
                 }
             `;
             document.head.appendChild(styleSheet);
+
+            // Remover el div después de 1.5 segundos
+            setTimeout(function () {
+                document.body.removeChild(cover);
+            }, 1500);
+        });
+
+        // FAQ Accordion Functionality
+        document.querySelectorAll('.faq-accordion button').forEach(button => {
+            button.addEventListener('click', () => {
+                const isExpanded = button.getAttribute('aria-expanded') === 'true';
+                button.setAttribute('aria-expanded', !isExpanded);
+
+                const content = button.nextElementSibling;
+                if (content) {
+                    if (!isExpanded) {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        content.style.opacity = '1';
+                    } else {
+                        content.style.maxHeight = '0';
+                        content.style.opacity = '0';
+                    }
+                }
+            });
         });
     </script>
   </body>
