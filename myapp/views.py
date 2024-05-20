@@ -69,3 +69,7 @@ def registro(request):
 @login_required(login_url='login')  # Redirige a 'login' si el usuario no ha iniciado sesión
 def inicio(request):
     return render(request, 'inicio.html', {'nombre_completo': request.user.nombre_completo, 'correo': request.user.correo})
+
+@login_required(login_url='login')  # Redirige a 'login' si el usuario no ha iniciado sesión
+def faq(request):
+    return render(request, 'faq.html')
