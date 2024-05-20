@@ -4,12 +4,8 @@ SAMUEL
 
 dar ideas para configuracion
 dar ideas para ayuda
-asignar un limite de caracteres de nombre (max 15 para mostrar)
-asignar un limite de caracteres de correo
-asignar un limite y minimo de caracteres de usuario
 
 _______________________________ 
-mejorar el diseño de registro.html (si esq se puede)
 pagina 404
 ver que se puede agregar al menu de inico pa que no se vea tan solo xd
 (cuando terminemos todo el proyecto realizar pagina de presentacion del proyecto cojer una plantilla de bootstrap)

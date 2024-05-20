@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +7,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Registro | Waly</title>
-  <link rel="stylesheet" href="/static/css/registro.css" />
+    <link rel="shortcut icon" href="{%  static 'img/logo.png' %}">
+  <link rel="stylesheet" href="{% static 'css/registro.css' %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
+    <div class="area" >
+        <ul class="circles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+        </ul>
+</div >
   <section class="container">
     <header>Formulario de registro</header>
     <form action="{% url 'registro' %}" class="form" id="registroForm" method="post">
