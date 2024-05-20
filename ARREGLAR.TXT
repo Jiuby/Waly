@@ -7,6 +7,7 @@ dar ideas para ayuda
 agregar contenido faq
 ver si se puede mejorar cuando se baja uno de los menus del faq que se mueve  el menu
 
+
 _______________________________ 
 pagina 404
 mejorar login diseño
@@ -18,7 +19,6 @@ ver que se puede agregar al menu de inico pa que no se vea tan solo xd
 catalina
 _______________________________
 MECHAS
-agregar faq
 
 agregar cosas en el menu de ayuda
 agregar cambio de contraseña en el menu de ajustes
