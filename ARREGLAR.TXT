@@ -4,15 +4,22 @@ SAMUEL
 
 dar ideas para configuracion
 dar ideas para ayuda
+agregar faq
+https://codepen.io/Nelmau/pen/rNbEMXd
 
 _______________________________ 
 pagina 404
+mejorar login diseño
+nombre + palabras cutes en inicio.html en la mitad
+
 ver que se puede agregar al menu de inico pa que no se vea tan solo xd
 (cuando terminemos todo el proyecto realizar pagina de presentacion del proyecto cojer una plantilla de bootstrap)
 
 catalina
 _______________________________
 MECHAS
+agregar faq
+
 agregar cosas en el menu de ayuda
 agregar cambio de contraseña en el menu de ajustes
 agregar cambio de correo en el menu de ajustes
