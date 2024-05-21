@@ -7,7 +7,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inicio | Waly</title>
+    <title>Configuracion | Waly</title>
        <link rel="shortcut icon" href="{%  static 'img/logo.png' %}">
     <!-- STYLESHEET -->
     <link rel="stylesheet" href="/static/css/inicio.css">
@@ -86,8 +86,8 @@
           <div class="menu">
             <p class="title" style="color: white;">Inicio</p>
             <ul>
-              <li class="active">
-                <a href="#">
+              <li>
+                <a href="{% url 'inicio' %}">
                   <i class="icon ph-bold ph-house-simple"></i>
                   <span class="text">Inicio</span>
                 </a>
@@ -157,8 +157,8 @@
           <div class="menu">
             <p class="title" style="color: white;">Ajustes</p>
             <ul>
-              <li>
-                <a href="{% url 'configuracion' %}">
+              <li class="active">
+                <a href="#">
                   <i class="icon ph-bold ph-gear"></i>
                   <span class="text">Configuracion</span>
                 </a>
@@ -212,16 +212,16 @@
             cover.style.justifyContent = 'center';
             cover.style.alignItems = 'center';
             cover.style.animation = 'disappear 1.5s forwards';
-    
+
             // Crear el div del loader
             var loader = document.createElement('div');
             loader.className = 'loader';
             loader.style.display = 'inline-grid';
-    
+
             // Crear los pseudo-elementos :before y :after con JS
             var loaderBefore = document.createElement('div');
             var loaderAfter = document.createElement('div');
-    
+
             [loaderBefore, loaderAfter].forEach(function (pseudo) {
                 pseudo.style.content = '""';
                 pseudo.style.height = '27px';
@@ -236,20 +236,20 @@
                 pseudo.style.clipPath = 'inset(0 60% 0 0)';
                 pseudo.style.animation = 'l7 0.8s infinite linear alternate';
             });
-    
+
             // Añadir estilos específicos para :after
             loaderAfter.style.animationDirection = 'alternate-reverse';
-    
+
             // Añadir los pseudo-elementos al loader
             loader.appendChild(loaderBefore);
             loader.appendChild(loaderAfter);
-    
+
             // Añadir el loader al contenedor de la pantalla completa
             cover.appendChild(loader);
-    
+
             // Añadir el contenedor al body
             document.body.appendChild(cover);
-    
+
             // Definir las animaciones en JS
             var styleSheet = document.createElement('style');
             styleSheet.type = 'text/css';
@@ -263,7 +263,7 @@
                         visibility: hidden;
                     }
                 }
-    
+
                 @keyframes l7 {
                     to { clip-path: inset(0 0 0 60%); }
                 }

@@ -25,5 +25,6 @@ urlpatterns = [
     path('registro/', myapp_views.registro, name='registro'),
     path('inicio/', myapp_views.inicio, name='inicio'),
     path('faq/', myapp_views.faq, name='faq'),
+    path('configuracion/', myapp_views.configuracion, name='configuracion'),
     path('logout/', auth_views.LogoutView.as_view(next_page='login'), name='logout'),
 ]

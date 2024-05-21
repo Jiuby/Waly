@@ -72,4 +72,8 @@ def inicio(request):
 
 @login_required(login_url='login')  # Redirige a 'login' si el usuario no ha iniciado sesión
 def faq(request):
-    return render(request, 'faq.html')
+    return render(request, 'faq.html', {'nombre_completo': request.user.nombre_completo, 'correo': request.user.correo})
+
+@login_required(login_url='login')  # Redirige a 'login' si el usuario no ha iniciado sesión
+def configuracion(request):
+    return render(request, 'configuracion.html', {'nombre_completo': request.user.nombre_completo, 'correo': request.user.correo})

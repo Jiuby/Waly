@@ -1,4 +1,6 @@
 {% load static %}
+{% load custom_filters %}
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -196,8 +198,8 @@
             <img src="{%  static 'img/logo.png' %}" />
           </div>
           <div class="user-details">
-            <p class="title" style="color: white;">{{ correo }}</p>
-            <p class="name" style="color: white;">{{ nombre_completo }}</p>
+            <p class="title" style="color: white;">{{ correo|cut_domain }}</p>
+            <p class="name" style="color: white;">{{ nombre_completo|truncatechars:15 }}</p>
           </div>
         </div>
         <div class="nav">
@@ -276,7 +278,7 @@
             <p class="title" style="color: white;">Ajustes</p>
             <ul>
               <li>
-                <a href="#">
+                <a href="{% url 'configuracion' %}">
                   <i class="icon ph-bold ph-gear"></i>
                   <span class="text">Configuracion</span>
                 </a>

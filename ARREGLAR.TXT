@@ -4,7 +4,6 @@ SAMUEL
 pantalla de carga mientras se envia el correo de registro
 dar ideas para configuracion
 dar ideas para ayuda
-agregar contenido faq
 ver si se puede mejorar cuando se baja uno de los menus del faq que se mueve  el menu
 
 
@@ -12,6 +11,8 @@ _______________________________
 pagina 404
 mejorar login diseño
 nombre + palabras cutes en inicio.html en la mitad
+mejorar la pagina de FAQ
+volver nativo FAQ
 
 ver que se puede agregar al menu de inico pa que no se vea tan solo xd
 (cuando terminemos todo el proyecto realizar pagina de presentacion del proyecto cojer una plantilla de bootstrap)
@@ -20,7 +21,6 @@ catalina
 _______________________________
 MECHAS
 
-agregar cosas en el menu de ayuda
 agregar cambio de contraseña en el menu de ajustes
 agregar cambio de correo en el menu de ajustes
 pasarlo a una base de datos en la nube (MySQL AZURE)
@@ -30,6 +30,7 @@ _______________________________
 
 A FUTURO QUE COMENZAR A REALIZAR?
 ___________________________________________
+ACTUALIZAR FAQ
 EL MENU DE PREGUNTAS PARA REALIZAR LAS PREGUNTAS PARA CONOCER A LA PERSONA
 10 PREGUNTAS SABRA DIOS QUE PREGUNTAS VAMOS A PONER
 NO TIENEN QUE SER RESPONDA TAMBIEN PODEMOS COLOCAR ANALIZAR Y QUE SELECCIONE UNA OPCION O QUE VEAN UN VIDEO
