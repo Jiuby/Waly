@@ -4,7 +4,6 @@ SAMUEL
 pantalla de carga mientras se envia el correo de registro
 dar ideas para configuracion
 dar ideas para ayuda
-ver si se puede mejorar cuando se baja uno de los menus del faq que se mueve  el menu
 
 
 _______________________________ 
