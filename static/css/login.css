@@ -1,14 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
 /* colors */
 .register-text {
-  font-family: 'Arial', sans-serif; /* Utiliza una fuente sans-serif clara */
-  color: #617E92;
+  font-family: 'Poppins', sans-serif; /* Utiliza una fuente sans-serif clara */
+  color: #0ba5a5;
   text-align: center;
   margin-top: 10px;
   font-size: 18px; /* Tamaño de fuente más grande */
 }
 
 .register-text a {
-  color: #3A5E77;
+  color: #037F7E;
   text-decoration: none;
   font-weight: bold;
   font-size: 18px; /* Tamaño de fuente más grande para el enlace */
@@ -22,18 +24,17 @@ html {
     width: 100%;
     height: 100%;
   }
-  
+
   body {
     background-color: #fdfbec;
     position: relative;
     width: 100%;
     height: 120%;
     font-size: 16px;
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
   }
-  
   form {
     position: absolute;
     top: 50%;
@@ -48,7 +49,7 @@ html {
     box-sizing: border-box;
     border: solid 1px #DDD;
     border-radius: 0.5em;
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: 'Poppins', sans-serif;
   }
   form .svgContainer {
     position: relative;
@@ -83,7 +84,7 @@ html {
     width: inherit;
     height: inherit;
     box-sizing: border-box;
-    border: solid 2.5px #217093;
+    border: solid 2.5px #037F7E;
     border-radius: 50%;
   }
   form .inputGroup {
@@ -98,7 +99,7 @@ html {
     margin: 0 0 12px;
     display: block;
     font-size: 1.25em;
-    color: #217093;
+    color: #037F7E;
     font-weight: 700;
     font-family: inherit;
   }
@@ -108,7 +109,7 @@ html {
     padding: 0 1em 0;
     padding: 0.875em 1em 0;
     background-color: #f3fafd;
-    border: solid 2px #217093;
+    border: solid 2px #037F7E;
     border-radius: 4px;
     -webkit-appearance: none;
     box-sizing: border-box;
@@ -123,13 +124,13 @@ html {
   form input[type=email]:focus, form input[type=text]:focus, form input[type=number]:focus, form input[type=url]:focus, form input[type=search]:focus, form input[type=password]:focus {
     outline: none;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-    border: solid 2px #4eb8dd;
+    border: solid 2px #42c0ba;
   }
   form button {
     display: block;
     margin: 0;
     padding: 0.65em 1em 1em;
-    background-color: #4eb8dd;
+    background-color: #037F7E;
     border: none;
     border-radius: 4px;
     box-sizing: border-box;
@@ -143,7 +144,7 @@ html {
     transition: background-color 0.2s ease-out;
   }
   form button:hover, form button:active {
-    background-color: #217093;
+    background-color: #0ca1a1;
   }
   form .inputGroup1 .helper {
     position: absolute;
@@ -171,9 +172,9 @@ html {
   }
   form .inputGroup2 input[type=text] {
     padding: 0.025em 1em 0;
-  }
+}
   form .inputGroup2 #showPasswordToggle {
-    display: block;
+    display: flex;
     padding: 0 0 0 1.45em;
     position: absolute;
     top: 0.25em;
@@ -187,12 +188,12 @@ html {
   }
   form .inputGroup2 #showPasswordToggle .indicator {
     position: absolute;
-    top: 0;
+    top: 0.25em;
     left: 0;
     height: 0.85em;
     width: 0.85em;
     background-color: #f3fafd;
-    border: solid 2px #217093;
+    border: solid 2px #037F7E;
     border-radius: 3px;
   }
   form .inputGroup2 #showPasswordToggle .indicator:after {
@@ -202,7 +203,7 @@ html {
     top: 0.025em;
     width: 0.2em;
     height: 0.5em;
-    border: solid #217093;
+    border: solid #218f93;
     border-width: 0 3px 3px 0;
     transform: rotate(45deg);
     visibility: hidden;
@@ -211,7 +212,7 @@ html {
     visibility: visible;
   }
   form .inputGroup2 #showPasswordToggle input:focus ~ .indicator, form .inputGroup2 #showPasswordToggle input:hover ~ .indicator {
-    border-color: #4eb8dd;
+    border-color: #4ed4dd;
   }
   form .inputGroup2 #showPasswordToggle input:disabled ~ .indicator {
     opacity: 0.5;
@@ -227,7 +228,7 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #fdfbec; /* Fondo blanco */
+  background-color: #F5F7FF; /* Fondo blanco */
   display: flex; /* Usar flexbox para centrar el loader */
   justify-content: center; /* Centrar horizontalmente */
   align-items: center; /* Centrar verticalmente */
