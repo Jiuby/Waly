@@ -264,32 +264,7 @@
   <!-- Custom js for this page-->
   <script src="{%  static 'js/dashboard.js' %}"></script>
   <script src="{%  static 'js/Chart.roundedBarCharts.js' %}"></script>
-          <script>
-document.addEventListener('DOMContentLoaded', function () {
-    {% if messages %}
-        {% for message in messages %}
-            // Remove existing alerts
-            const existingAlert = document.querySelector('.alert');
-            if (existingAlert) existingAlert.remove();
-
-            // Create a new Bootstrap alert
-            const alertDiv = document.createElement('div');
-            alertDiv.className = 'alert alert-danger position-fixed text-center';
-            alertDiv.style.cssText = 'top: 0; left: 50%; transform: translateX(-50%); width: 500px;';
-            alertDiv.role = 'alert';
-            alertDiv.textContent = "{{ message }}";  // Display the custom error message
-
-            // Append the alert to the body
-            document.body.appendChild(alertDiv);
-
-            // Remove the alert after 3 seconds
-            setTimeout(function() {
-                document.body.removeChild(alertDiv);
-            }, 3000);
-        {% endfor %}
-    {% endif %}
-});
-</script>
+         
   <!-- End custom js for this page-->
 </body>
 
