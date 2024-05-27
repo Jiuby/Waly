@@ -7,7 +7,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Preferencias | Waly</title>
+  <title>Faq | Waly</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{%  static 'vendors/feather/feather.css' %}">
   <link rel="stylesheet" href="{%  static 'vendors/ti-icons/css/themify-icons.css' %}">
@@ -23,7 +23,6 @@
   <!-- endinject -->
   <link rel="shortcut icon" href="{%  static 'img/logo.png' %}" />
 </head>
-
 <body>
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
@@ -81,7 +80,7 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
-          <li class="nav-item ">
+          <li class="nav-item">
             <a class="nav-link" href="index.html">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">Inicio</span>
@@ -126,7 +125,7 @@
               </ul>
             </div>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
               <i class="icon-head menu-icon"></i>
               <span class="menu-title">Configuracion</span>
@@ -134,8 +133,8 @@
             </a>
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'configuracion' %}"> Informacion Basica </a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'preferencias' %}"> Preferencias </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'configuracion' %}""> Informacion Basica </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'preferencias' %}"l"> Preferencias </a></li>
               </ul>
             </div>
 
@@ -148,7 +147,7 @@
             <div>
             </div>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="{% url 'faq' %}">
               <i class="icon-paper menu-icon"></i>
               <span class="menu-title">FAQ</span>
@@ -163,31 +162,132 @@
             <div class="col-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Preferencias</h4>
-                  <p class="card-description">Preferencias del usuario</p>
+                  <h4 class="card-title">FAQ</h4>
+                  <p class="card-description">¿Qué es Waly?</p>
                   <form>
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
                           <div class="form-check">
                             <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input">
-                                Deseas que podamos usar tus resultados y progreso para mejorar con el desarollo de la pagina
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input">
-                              Deseas recibir informacion a tu correo acerca de contenido nuevo que te interese?
+                                <p>Waly es una plataforma dedicada a desarrollar las habilidades de personas con autismo a través de recursos y actividades diseñadas específicamente para sus necesidades. Ofrecemos un entorno inclusivo y de apoyo donde los usuarios pueden aprender y crecer a su propio ritmo. </p>
                             </label>
                           </div>
                         </div>
-                          <button type="submit" class="btn btn-primary mr-2">Actualizar</button>
                       </div>
                       <div class="col-md-6">
                       </div>
                     </div>
-                  </form>
+                      <p class="card-description">¿Cuál es la misión de Waly?</p>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <p>
+                                  La misión de Waly es proporcionar recursos accesibles y efectivos que promuevan el desarrollo de habilidades en personas con autismo. Nos esforzamos por crear un espacio donde cada individuo pueda alcanzar su máximo potencial mediante actividades educativas, recreativas y terapéuticas. </p>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                      </div>
+                    </div>
+                      <p class="card-description">¿Qué tipo de recursos ofrece Waly?</p>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <div class="form-check">
+                            <label class="form-check-label">
+                                <p> Waly ofrece una variedad de recursos, incluyendo: </p>
+                                <ul>
+                                    <li>Actividades interactivas diseñadas para mejorar habilidades cognitivas y sociales.</li>
+                                    <li>Herramientas educativas adaptadas a diferentes niveles de desarrollo.</li>
+                                    <li>Programas y guias informativas para las personas.</li>
+                                    <li>Programas personalizados de aprendizaje y desarrollo.</li>
+                                </ul>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                      </div>
+                    </div>
+                      <p class="card-description">¿Para quién está diseñado Waly?</p>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <p>
+                                  Waly está diseñado para personas con autismo de todas las edades y niveles de desarrollo. También es una herramienta valiosa para padres, cuidadores, educadores y terapeutas que buscan apoyar el crecimiento y desarrollo de sus seres queridos o estudiantes.</p>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                      </div>
+                    </div>
+                      <p class="card-description">¿Cómo están diseñadas las actividades?</p>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <p>
+                                  Las actividades en Waly están diseñadas en colaboración con expertos en psicología y neuropsicología de organizaciones como "Global Salud Mental" y "NeuroArmoniaKids". Estas actividades están basadas en estudios y prácticas que han demostrado ser efectivas para el desarrollo de habilidades en personas con autismo, asegurando que sean tanto educativas como entretenidas.</p>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                      </div>
+                    </div>
+                      <p class="card-description">¿Cómo puedo contactar con el equipo de soporte?</p>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <p>
+                                  Puedes contactar con el equipo de soporte de Waly enviando un correo electrónico a walymedellin@gmail.com. Estamos aquí para ayudarte con cualquier pregunta o problema que puedas tener.</p>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                      </div>
+                    </div>
+                      <p class="card-description">¿Cómo protege Waly la privacidad de los usuarios?</p>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <p>
+                                 Waly toma muy en serio la privacidad de sus usuarios. Implementamos estrictas medidas de seguridad para proteger la información personal, incluyendo cifrado de datos y protocolos de seguridad avanzados. Además, cumplimos con todas las regulaciones de privacidad aplicables para garantizar que tu información esté segura.</p>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                      </div>
+                    </div>
+                      <p class="card-description">¿Según qué estudios se desarrollan las actividades y recursos en Waly?</p>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <div class="form-check">
+                            <label class="form-check-label">
+                              <p>
+                                Las actividades y recursos en Waly se desarrollan basándonos en estudios y prácticas recomendadas por organizaciones y grupos de expertos en psicología y neuropsicología, como "Global Salud Mental" y "NeuroArmoniaKids". Estas colaboraciones aseguran que los métodos utilizados sean efectivos y basados en evidencia científica.</p>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                      </div>
+                    </div>
                 </div>
 
               </div>
