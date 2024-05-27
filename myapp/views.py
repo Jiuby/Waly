@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
-from .forms import RegistroForm, LoginForm, UpdateUserForm
+from .forms import RegistroForm, LoginForm, UpdateUserForm, actualizarPreferencias
 from django.contrib.auth import authenticate, login
 from django.http import JsonResponse, HttpResponse
 from django.contrib import messages
@@ -76,7 +76,19 @@ def faq(request):
 
 @login_required(login_url='login')  # Redirige a 'login' si el usuario no ha iniciado sesión
 def preferencias(request):
-    return render(request, 'preferencias.html', {'nombre_completo': request.user.nombre_completo, 'correo': request.user.correo})
+    form = actualizarPreferencias(request.POST or None, instance=request.user)
+    if request.method == 'POST':
+        print(form.errors)
+        print(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Preferencias actualizadas con éxito')
+            return redirect('preferencias')
+        else:
+            messages.error(request, 'Hubo un error al actualizar las preferencias')
+    else:
+        form = UpdateUserForm(instance=request.user)
+    return render(request, 'preferencias.html', {'nombre_completo': request.user.nombre_completo, 'correo': request.user.correo, 'form': form})
 
 @login_required(login_url='login')
 def configuracion(request):

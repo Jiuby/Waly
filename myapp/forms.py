@@ -36,6 +36,7 @@ class LoginForm(forms.Form):
 class UpdateUserForm(forms.ModelForm):
     confirm_password = forms.CharField(widget=forms.PasswordInput)
 
+
     class Meta:
         model = Usuario
         fields = ['usuario', 'correo', 'contraseña']
@@ -66,3 +67,9 @@ class UpdateUserForm(forms.ModelForm):
         if not password_regex.match(password):
             raise ValidationError("La contraseña debe tener al menos 6 caracteres, 1 mayúscula y 1 número")
         return password
+
+class actualizarPreferencias(forms.ModelForm):
+    class Meta:
+        model = Usuario
+        fields = ['compartirResultados', 'informacionCorreo']
+

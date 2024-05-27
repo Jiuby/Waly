@@ -165,19 +165,21 @@
                 <div class="card-body">
                   <h4 class="card-title">Preferencias</h4>
                   <p class="card-description">Preferencias del usuario</p>
-                  <form>
+                  <form method="post">
+                    {% csrf_token %}
+                  
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
                           <div class="form-check">
                             <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input">
+                              <input type="checkbox" class="form-check-input" name="compartirResultados" {% if form.instance.compartirResultados %} checked {% endif %}>
                                 Deseas que podamos usar tus resultados y progreso para mejorar con el desarollo de la pagina
                             </label>
                           </div>
                           <div class="form-check">
                             <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input">
+                              <input type="checkbox" class="form-check-input" name="informacionCorreo" {% if form.instance.informacionCorreo %} checked {% endif %}>
                               Deseas recibir informacion a tu correo acerca de contenido nuevo que te interese?
                             </label>
                           </div>

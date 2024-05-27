@@ -16,11 +16,14 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
     contraseña = models.CharField(max_length=100)
     fecha_nacimiento = models.DateField()
     genero = models.CharField(max_length=20)
+    compartirResultados = models.BooleanField(default=False)
+    informacionCorreo = models.BooleanField(default=False)
+
 
     objects = UsuarioManager()
 
     USERNAME_FIELD = 'usuario'
-    REQUIRED_FIELDS = ['correo', 'nombre_completo', 'fecha_nacimiento', 'genero']
+    REQUIRED_FIELDS = ['correo', 'nombre_completo', 'fecha_nacimiento', 'genero', 'compartirResultados', 'informacionCorreo']
 
     def __str__(self):
         return self.usuario
