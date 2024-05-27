@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
-from .forms import RegistroForm, LoginForm
+from .forms import RegistroForm, LoginForm, UpdateUserForm
 from django.contrib.auth import authenticate, login
 from django.http import JsonResponse, HttpResponse
 from django.contrib import messages
@@ -78,6 +78,19 @@ def faq(request):
 def preferencias(request):
     return render(request, 'preferencias.html', {'nombre_completo': request.user.nombre_completo, 'correo': request.user.correo})
 
-@login_required(login_url='login')  # Redirige a 'login' si el usuario no ha iniciado sesión
+@login_required(login_url='login')
 def configuracion(request):
-    return render(request, 'cambioContraseña.html', {'nombre_completo': request.user.nombre_completo, 'correo': request.user.correo})
+    form = UpdateUserForm(request.POST or None)
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Información actualizada con éxito')
+            return redirect('configuracion')
+        else:
+            messages.error(request, 'Hubo un error al actualizar la información')
+    else:
+        form = UpdateUserForm(instance=request.user)
+    return render(request, 'cambioContraseña.html', {'nombre_completo': request.user.nombre_completo, 'correo': request.user.correo, 'contraseña': request.user.contraseña, 'usuario': request.user.usuario})
+
+def custom_404_view(request, exception):
+    return render(request, '404.html')

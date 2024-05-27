@@ -18,6 +18,10 @@ from django.contrib import admin
 from django.urls import path
 from myapp import views as myapp_views
 from django.contrib.auth import views as auth_views
+from django.conf.urls import handler404
+from myapp.views import custom_404_view
+
+handler404 = custom_404_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,6 +31,7 @@ urlpatterns = [
     path('faq/', myapp_views.faq, name='faq'),
     path('configuracion/', myapp_views.configuracion, name='configuracion'),
     path('preferencias/', myapp_views.preferencias, name='preferencias'),
+    path('404/', myapp_views.custom_404_view, name='404'),
     path('logout/', auth_views.LogoutView.as_view(next_page='login'), name='logout'),
 
 ]

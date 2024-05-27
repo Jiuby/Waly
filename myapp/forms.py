@@ -1,5 +1,7 @@
 from django import forms
 from .models import Usuario
+from django.core.exceptions import ValidationError
+import re
 
 class RegistroForm(forms.ModelForm):
     class Meta:
@@ -30,3 +32,37 @@ class LoginForm(forms.Form):
         if not Usuario.objects.filter(usuario=usuario, contraseña=contraseña).exists():
             self.add_error('usuario', 'Usuario o contraseña incorrectos.')
         return cleaned_data
+
+class UpdateUserForm(forms.ModelForm):
+    confirm_password = forms.CharField(widget=forms.PasswordInput)
+
+    class Meta:
+        model = Usuario
+        fields = ['usuario', 'correo', 'contraseña']
+
+    def clean(self):
+        cleaned_data = super().clean()
+        password = cleaned_data.get('contraseña')
+        confirm_password = cleaned_data.get('confirm_password')
+
+        if password != confirm_password:
+            self.add_error('confirm_password', 'Las contraseñas no coinciden')
+
+    def clean_correo(self):
+        correo = self.cleaned_data.get('correo')
+        if Usuario.objects.filter(correo=correo).exclude(usuario=self.instance.usuario).exists():
+            raise ValidationError("El correo ya está en uso")
+        return correo
+
+    def clean_usuario(self):
+        usuario = self.cleaned_data.get('usuario')
+        if Usuario.objects.filter(usuario=usuario).exclude(usuario=self.instance.usuario).exists():
+            raise ValidationError("El nombre de usuario ya está en uso")
+        return usuario
+
+    def clean_contraseña(self):
+        password = self.cleaned_data.get('contraseña')
+        password_regex = re.compile(r'^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6,}$')
+        if not password_regex.match(password):
+            raise ValidationError("La contraseña debe tener al menos 6 caracteres, 1 mayúscula y 1 número")
+        return password
