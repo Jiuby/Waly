@@ -264,6 +264,15 @@
   <!-- Custom js for this page-->
   <script src="{%  static 'js/dashboard.js' %}"></script>
   <script src="{%  static 'js/Chart.roundedBarCharts.js' %}"></script>
+{% if messages %}
+    <script>
+        window.onload = function() {
+            {% for message in messages %}
+                alert("{{ message }}");
+            {% endfor %}
+        }
+    </script>
+{% endif %}
          
   <!-- End custom js for this page-->
 </body>

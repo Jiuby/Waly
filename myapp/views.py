@@ -92,18 +92,17 @@ def preferencias(request):
 
 @login_required(login_url='login')
 def configuracion(request):
-    form = UpdateUserForm(request.POST or None)
+    form = UpdateUserForm(request.POST or None, instance=request.user)
     if request.method == 'POST':
         if form.is_valid():
             form.save()
             messages.success(request, 'Información actualizada con éxito')
-            return redirect('configuracion')
         else:
-            messages.error(request, 'Hubo un error al actualizar la información')
-    else:
-        form = UpdateUserForm(instance=request.user)
+            for field, errors in form.errors.items():
+                for error in errors:
+                    messages.error(request, error)
+        return redirect('configuracion')  # Redirige al usuario a la misma página
     return render(request, 'cambioContraseña.html', {'nombre_completo': request.user.nombre_completo, 'correo': request.user.correo, 'contraseña': request.user.contraseña, 'usuario': request.user.usuario})
-
 def custom_404_view(request, exception):
     return render(request, '404.html')
 
