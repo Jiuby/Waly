@@ -106,3 +106,9 @@ def configuracion(request):
 
 def custom_404_view(request, exception):
     return render(request, '404.html')
+
+
+
+@login_required(login_url='login')
+def graficas(request):
+    return render(request, 'graficas.html')

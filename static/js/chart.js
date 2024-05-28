@@ -5,7 +5,7 @@ $(function() {
    */
   'use strict';
   var data = {
-    labels: ["2013", "2014", "2014", "2015", "2016", "2017"],
+    labels: ["Visual", "Auditivo", "Memoria fotográfica", "Practico", "Lectura/Escritura", "Aprendizaje lógico"],
     datasets: [{
       label: '# of Votes',
       data: [10, 19, 3, 5, 2, 3],
@@ -29,6 +29,37 @@ $(function() {
       fill: false
     }]
   };
+
+  // Paso 1: Crea un nuevo conjunto de datos
+  var newData = {
+    labels: ["Empatia", "Concentración", "Hiperfijacion", "Emociones", "Adaptabilidad", "gestion"],
+    datasets: [{
+      label: '# of Votes',
+      data: [10, 19, 3, 5, 2, 3],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255,99,132,1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)'
+      ],
+      borderWidth: 1,
+      fill: false
+    }]
+  };
+
+
+
+
   var multiLineData = {
     labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
     datasets: [{
@@ -276,6 +307,16 @@ $(function() {
       data: data,
       options: options
     });
+  }
+
+  // Paso 3: Crea una nueva gráfica con el nuevo ID y el nuevo conjunto de datos
+  if ($("#barChart2").length) {
+      var newBarChartCanvas = $("#barChart2").get(0).getContext("2d");
+      var newBarChart = new Chart(newBarChartCanvas, {
+        type: 'bar',
+        data: newData,
+        options: options
+      });
   }
 
   if ($("#lineChart").length) {
