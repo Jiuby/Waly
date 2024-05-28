@@ -4,17 +4,20 @@ SAMUEL
 que se guarde la eleccion de color del usuario
 realizar el menu de actividades
 realizar la pagina del proyecto / Seifer
-
+realizar los jueguitos / Cata, yo, seifer
+--> realizar una plantilla para realizar los juegos
 _______________________________ 
 
 realizar el menu de actividades
 cambiar el background de registro / Cata
 realizar el menu de recursos / Cata
-realizar el menu de actividades
-
+realizar los jueguitos / Cata, yo, seifer
+--> realizar una plantilla para realizar los juegos
 catalina
 _______________________________
 MECHAS
+realizar los jueguitos / Cata, yo, seifer
+--> realizar una plantilla para realizar los juegos
 
 pasarlo a una base de datos en la nube (MySQL AZURE)
 Realizar el deploy en un servidor
