@@ -33,6 +33,8 @@ urlpatterns = [
     path('preferencias/', myapp_views.preferencias, name='preferencias'),
     path('404/', myapp_views.custom_404_view, name='404'),
     path('graficas/', myapp_views.graficas, name='graficas'),
+    path('programas/', myapp_views.programas, name='programas'),
+    path('videos/', myapp_views.videos, name='videos'),
     path('logout/', auth_views.LogoutView.as_view(next_page='login'), name='logout'),
 
 ]

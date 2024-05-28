@@ -9,7 +9,6 @@ _______________________________
 
 realizar el menu de actividades
 cambiar el background de registro / Cata
-realizar el menu de recursos / Cata
 realizar el menu de actividades
 
 catalina

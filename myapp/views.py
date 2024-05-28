@@ -111,3 +111,11 @@ def custom_404_view(request, exception):
 @login_required(login_url='login')
 def graficas(request):
     return render(request, 'graficas.html')
+
+@login_required(login_url='login')
+def programas(request):
+    return render(request, 'programas.html')
+
+@login_required(login_url='login')
+def videos(request):
+    return render(request, 'videos.html')

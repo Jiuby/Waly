@@ -7,7 +7,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Configuracion | Waly</title>
+  <title>Videos | Waly</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{%  static 'vendors/feather/feather.css' %}">
   <link rel="stylesheet" href="{%  static 'vendors/ti-icons/css/themify-icons.css' %}">
@@ -23,6 +23,7 @@
   <!-- endinject -->
   <link rel="shortcut icon" href="{%  static 'img/logo.png' %}" />
 </head>
+
 <body>
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
@@ -50,7 +51,7 @@
     </nav>
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
-      <!-- partial:partials/_settings-panel.html -->
+      <!-- partial:../../partials/_settings-panel.html -->
       <div class="theme-setting-wrapper">
         <div id="settings-trigger"><i class="ti-settings"></i></div>
         <div id="theme-settings" class="settings-panel">
@@ -69,24 +70,18 @@
           </div>
         </div>
       </div>
-      <div id="right-sidebar" class="settings-panel">
-        <i class="settings-close ti-close"></i>
 
-        <div class="tab-content" id="setting-content">
-
-        </div>
-      </div>
       <!-- partial -->
-      <!-- partial:partials/_sidebar.html -->
+      <!-- partial:../../partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
-          <li class="nav-item">
+          <li class="nav-item ">
             <a class="nav-link" href="{% url 'inicio' %}">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">Inicio</span>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
               <span class="menu-title">Recursos</span>
@@ -110,7 +105,7 @@
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
               <i class="icon-contract menu-icon"></i>
-              <span class="menu-title">Actividades</span>
+              <span class="menu-title">Actividades Completas</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="icons">
@@ -124,7 +119,7 @@
               </ul>
             </div>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
               <i class="icon-head menu-icon"></i>
               <span class="menu-title">Configuracion</span>
@@ -132,10 +127,11 @@
             </a>
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'configuracion' %}""> Informacion Basica </a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'preferencias' %}""> Preferencias </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'configuracion' %}"> Informacion Basica </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'preferencias' %}"> Preferencias </a></li>
               </ul>
             </div>
+
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'logout' %}">
@@ -146,7 +142,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'faq' %}"">
+            <a class="nav-link" href="{% url 'faq' %}">
               <i class="icon-paper menu-icon"></i>
               <span class="menu-title">FAQ</span>
             </a>
@@ -157,92 +153,62 @@
       <div class="main-panel">
         <div class="content-wrapper">
           <div class="row">
+            
             <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Tu informacion</h4>
+                  <h4 class="card-title">Principales señales del autismo</h4>
                   <p class="card-description">
-                    Informacion Actual del usuario
-                  </p>
-                  <form class="forms-sample">
-                    <div class="form-group">
-                      <label for="exampleInputUsername1">Usuario</label>
-                      <input type="text" class="form-control" id="exampleInputUsername1" value="{{ user.usuario }}" readonly>
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Correo</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" value="{{ user.correo }}" readonly>
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputConfirmPassword1">Contraseña</label>
-                      <input type="text" class="form-control" id="exampleInputConfirmPassword1" value="{{ user.contraseña }}" readonly>
-                    </div>
-                  </form>
+                    Instituto Neurológico de Colombia </p>
+                    <iframe width="460" height="315" src="https://www.youtube.com/embed/gkMSoG_nNRc?si=BL8a9vU4itCbJpJ5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
               </div>
             </div>
             <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Actualiza tu informacion</h4>
+                  <h4 class="card-title">Panel Virtual de Expertos: Una mirada mundial al autismo</h4>
                   <p class="card-description">
-                    Actualiza la informacion de tu usuario
+                    Alcaldía de Medellín
                   </p>
-                  <form class="forms-sample" method="post">
-                      {% csrf_token %}
-                      {{  form.as_p}}
-                    <div class="form-group row">
-                      <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Usuario</label>
-                      <div class="col-sm-9">
-                        <input type="text" class="form-control" id="exampleInputUsername2" placeholder="Nuevo usuario" name="usuario" required>
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Correo</label>
-                      <div class="col-sm-9">
-                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Nuevo correo" name="correo" required>
-                      </div>
-                    </div>
-
-                    <div class="form-group row">
-                      <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Contraseña</label>
-                      <div class="col-sm-9">
-                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Agrega nueva contraseña" name="contraseña" required>
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">Confirmacion</label>
-                      <div class="col-sm-9">
-                        <input type="password" class="form-control" id="exampleInputConfirmPassword2" placeholder="Confirma tu contraseña" name="confirm_password" required>
-                      </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary mr-2">Actualizar</button>
-                    <button class="btn btn-light">Cancelar</button>
-                  </form>
+                  <iframe width="460" height="315" src="https://www.youtube.com/embed/YLR1f3VeTVY?si=-icZA3T2LHnTqPJT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                 
                 </div>
               </div>
             </div>
-
-
-        <div class="content-wrapper">
-        <!-- content-wrapper ends -->
-        <!-- partial:partials/_footer.html -->
-        <footer class="footer">
-
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block"></span>
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Hablemos de Autismo - Entrevista</h4>
+                  <p class="card-description">
+                    Secretaría de Educación de Medellín 
+                  </p>
+                  <iframe width="460" height="315" src="https://www.youtube.com/embed/9yIXU5-2Te0?si=n3g6qlGUFFO-J1P8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Autismo</h4>
+                  <p class="card-description">
+                    Concejo de Medellín
+                  </p>
+                  <iframe width="460" height="315" src="https://www.youtube.com/embed/gG2FFYr5_eY?si=rrZv5v5znfecU1Jc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
           </div>
-        </footer>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        
         <!-- partial -->
       </div>
-
-
       <!-- main-panel ends -->
-    </div>   
+    </div>
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
-
   <!-- plugins:js -->
   <script src="{%  static 'vendors/js/vendor.bundle.base.js' %}"></script>
   <!-- endinject -->
@@ -263,18 +229,8 @@
   <!-- Custom js for this page-->
   <script src="{%  static 'js/dashboard.js' %}"></script>
   <script src="{%  static 'js/Chart.roundedBarCharts.js' %}"></script>
-{% if messages %}
-    <script>
-        window.onload = function() {
-            {% for message in messages %}
-                alert("{{ message }}");
-            {% endfor %}
-        }
-    </script>
-{% endif %}
-         
-  <!-- End custom js for this page-->
+  <script></script>
+  <!-- endinject -->
 </body>
 
 </html>
-
