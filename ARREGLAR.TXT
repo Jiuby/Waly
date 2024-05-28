@@ -2,7 +2,6 @@ _______________________________
 
 SAMUEL
 que se guarde la eleccion de color del usuario
-agregar pop up en configuracion.html
 realizar el menu de actividades
 realizar la pagina del proyecto / Seifer
 
