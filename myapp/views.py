@@ -121,5 +121,47 @@ def videos(request):
     return render(request, 'videos.html')
 
 @login_required(login_url='login')
-def actividades(request):
-    return render(request, 'actividades.html')
+def visual(request):
+    return render(request, 'actividades/visual.html')
+
+@login_required(login_url='login')
+def empatia(request):
+    return render(request, 'actividades/empatia.html')
+
+@login_required(login_url='login')
+def concentracion(request):
+    return render(request, 'actividades/concentracion.html')
+
+@login_required(login_url='login')
+def creatividad(request):
+    return render(request, 'actividades/creatividad.html')
+
+@login_required(login_url='login')
+def emociones(request):
+    return render(request, 'actividades/emociones.html')
+
+@login_required(login_url='login')
+def adaptabilidad(request):
+    return render(request, 'actividades/adaptabilidad.html')
+
+@login_required(login_url='login')
+def gestion(request):
+    return render(request, 'actividades/gestion.html')
+
+@login_required(login_url='login')
+def memoria_fotografica(request):
+    return render(request, 'actividades/memoria_fotografica.html')
+@login_required(login_url='login')
+def practico(request):
+    return render(request, 'actividades/practico.html')
+
+@login_required(login_url='login')
+def lectura_escritura(request):
+    return render(request, 'actividades/lectura_escritura.html')
+
+@login_required(login_url='login')
+def aprendizaje_logico(request):
+    return render(request, 'actividades/aprendizaje_logico.html')
+@login_required(login_url='login')
+def auditiva(request):
+    return render(request, 'actividades/auditivo.html')
