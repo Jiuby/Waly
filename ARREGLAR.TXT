@@ -6,7 +6,6 @@ realizar la pagina del proyecto / Seifer
 
 _______________________________ 
 
-cambiar el background de registro
 realizar los jueguitos
 --> realizar una plantilla para realizar los juegos
 catalina
