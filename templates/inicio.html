@@ -116,12 +116,67 @@
             </a>
             <div class="collapse" id="icons">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Recomendadas</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'actividades' %}">Todas</a></li>
               </ul>
             </div>
             <div class="collapse" id="icons">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Todas</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'empatia' %}">Empatia</a></li>
+              </ul>
+            </div>
+              <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'concentracion' %}">Concentración</a></li>
+              </ul>
+            </div>
+              <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'creatividad' %}">Creatividad</a></li>
+              </ul>
+            </div>
+              <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'emociones' %}">Emociones</a></li>
+              </ul>
+            </div>
+              <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'adaptabilidad' %}">Adaptabilidad</a></li>
+              </ul>
+            </div>
+              <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'gestion' %}">Gestion</a></li>
+              </ul>
+            </div>
+              <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'visual' %}">Visual</a></li>
+              </ul>
+            </div>
+              <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'auditivo' %}">Auditivo</a></li>
+              </ul>
+            </div>
+              <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'memoria_fotografica' %}">Memoria fotográfica</a></li>
+              </ul>
+            </div>
+              <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'practico' %}">Practico</a></li>
+              </ul>
+            </div>
+              <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'lectura_escritura' %}">Lectura/Escritura</a></li>
+              </ul>
+            </div>
+              <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'aprendizaje_logico' %}">Aprendizaje lógico</a></li>
               </ul>
             </div>
           </li>
@@ -214,12 +269,13 @@
                 </div>
                 <div class="col-md-6 stretch-card transparent">
                   <div class="card card-light-danger">
-                    <div class="card-body">
-                      <p class="mb-4" style="text-align: center;">Desarróllate</p>
-                      <p class="fs-30 mb-2" style="text-align: center;">Actividades</p>
-                      <p class="mb-4"></p>
-
-                    </div>
+                    <a href="{% url 'actividades' %}" style="color: white;">
+                      <div class="card-body">
+                        <p class="mb-4" style="text-align: center;">Desarróllate</p>
+                        <p class="fs-30 mb-2" style="text-align: center;">Actividades</p>
+                        <p class="mb-4"></p>
+                      </div>
+                    </a>
                   </div>
                 </div>
               </div>
