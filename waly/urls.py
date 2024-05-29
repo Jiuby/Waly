@@ -35,6 +35,7 @@ urlpatterns = [
     path('graficas/', myapp_views.graficas, name='graficas'),
     path('programas/', myapp_views.programas, name='programas'),
     path('videos/', myapp_views.videos, name='videos'),
+    path('actividades/', myapp_views.actividades, name='actividades'),
     path('logout/', auth_views.LogoutView.as_view(next_page='login'), name='logout'),
 
 ]

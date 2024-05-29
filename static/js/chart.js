@@ -32,7 +32,7 @@ $(function() {
 
   // Paso 1: Crea un nuevo conjunto de datos
   var newData = {
-    labels: ["Empatia", "Concentración", "Hiperfijacion", "Emociones", "Adaptabilidad", "gestion"],
+    labels: ["Empatia", "Concentración", "Creatividad", "Emociones", "Adaptabilidad", "gestion"],
     datasets: [{
       label: '# of Votes',
       data: [10, 19, 3, 5, 2, 3],

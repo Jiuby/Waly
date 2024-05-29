@@ -7,7 +7,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Preferencias | Waly</title>
+  <title>Actividades | Waly</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{%  static 'vendors/feather/feather.css' %}">
   <link rel="stylesheet" href="{%  static 'vendors/ti-icons/css/themify-icons.css' %}">
@@ -51,15 +51,15 @@
     </nav>
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
-      <!-- partial:partials/_settings-panel.html -->
+      <!-- partial:../../partials/_settings-panel.html -->
       <div class="theme-setting-wrapper">
         <div id="settings-trigger"><i class="ti-settings"></i></div>
         <div id="theme-settings" class="settings-panel">
           <i class="settings-close ti-close"></i>
-          <p class="settings-heading">Sidebar apariencias</p>
+          <p class="settings-heading">SIDEBAR SKINS</p>
           <div class="sidebar-bg-options selected" id="sidebar-light-theme"><div class="img-ss rounded-circle bg-light border mr-3"></div>Light</div>
           <div class="sidebar-bg-options" id="sidebar-dark-theme"><div class="img-ss rounded-circle bg-dark border mr-3"></div>Dark</div>
-          <p class="settings-heading mt-2">Header apariencias</p>
+          <p class="settings-heading mt-2">HEADER SKINS</p>
           <div class="color-tiles mx-0 px-4">
             <div class="tiles success"></div>
             <div class="tiles warning"></div>
@@ -70,15 +70,9 @@
           </div>
         </div>
       </div>
-      <div id="right-sidebar" class="settings-panel">
-        <i class="settings-close ti-close"></i>
 
-        <div class="tab-content" id="setting-content">
-
-        </div>
-      </div>
       <!-- partial -->
-      <!-- partial:partials/_sidebar.html -->
+      <!-- partial:../../partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item ">
@@ -87,7 +81,7 @@
               <span class="menu-title">Inicio</span>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
               <span class="menu-title">Recursos</span>
@@ -125,7 +119,7 @@
               </ul>
             </div>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
               <i class="icon-head menu-icon"></i>
               <span class="menu-title">Configuracion</span>
@@ -159,58 +153,103 @@
       <div class="main-panel">
         <div class="content-wrapper">
           <div class="row">
-            <div class="col-12 grid-margin stretch-card">
+
+            <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Preferencias</h4>
-                  <p class="card-description">Preferencias del usuario</p>
-                  <form method="post">
-                    {% csrf_token %}
-                  
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input" name="compartirResultados" {% if form.instance.compartirResultados %} checked {% endif %}>
-                                Deseas que podamos usar tus resultados y progreso para mejorar con el desarollo de la pagina
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input" name="informacionCorreo" {% if form.instance.informacionCorreo %} checked {% endif %}>
-                              Deseas recibir informacion a tu correo acerca de contenido nuevo que te interese?
-                            </label>
-                          </div>
-                        </div>
-                          <button type="submit" class="btn btn-primary mr-2">Actualizar</button>
-                      </div>
-                      <div class="col-md-6">
-                      </div>
-                    </div>
-                  </form>
+                  <h4 class="card-title">Visual</h4>
+                  <p class="card-description">
+                    Instituto Neurológico de Colombia </p>
+                    <iframe width="460" height="315" src="https://www.youtube.com/embed/gkMSoG_nNRc?si=BL8a9vU4itCbJpJ5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
+              </div>
+            </div>
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title"></h4>
+                  <p class="card-description">
+                    Alcaldía de Medellín
+                  </p>
+                  <iframe width="460" height="315" src="https://www.youtube.com/embed/YLR1f3VeTVY?si=-icZA3T2LHnTqPJT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title"></h4>
+                  <p class="card-description">
+                    Secretaría de Educación de Medellín
+                  </p>
+                  <iframe width="460" height="315" src="https://www.youtube.com/embed/9yIXU5-2Te0?si=n3g6qlGUFFO-J1P8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title"></h4>
+                  <p class="card-description">
+                    Concejo de Medellín
+                  </p>
+                  <iframe width="460" height="315" src="https://www.youtube.com/embed/gG2FFYr5_eY?si=rrZv5v5znfecU1Jc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="content-wrapper">
+          <div class="row">
 
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Auditivo</h4>
+                  <p class="card-description">
+                    Instituto Neurológico de Colombia </p>
+                    <iframe width="460" height="315" src="https://www.youtube.com/embed/gkMSoG_nNRc?si=BL8a9vU4itCbJpJ5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title"></h4>
+                  <p class="card-description">
+                    Alcaldía de Medellín
+                  </p>
+                  <iframe width="460" height="315" src="https://www.youtube.com/embed/YLR1f3VeTVY?si=-icZA3T2LHnTqPJT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title"></h4>
+                  <p class="card-description">
+                    Secretaría de Educación de Medellín
+                  </p>
+                  <iframe width="460" height="315" src="https://www.youtube.com/embed/9yIXU5-2Te0?si=n3g6qlGUFFO-J1P8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title"></h4>
+                  <p class="card-description">
+                    Concejo de Medellín
+                  </p>
+                  <iframe width="460" height="315" src="https://www.youtube.com/embed/gG2FFYr5_eY?si=rrZv5v5znfecU1Jc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:../../partials/_footer.html -->
-        <footer class="footer">
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-          </div>
-        </footer>
-        <!-- partial -->
-      </div>
-        <!-- content-wrapper ends -->
-        <!-- partial:partials/_footer.html -->
-        <footer class="footer">
 
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block"></span>
-          </div>
-        </footer>
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
@@ -218,7 +257,6 @@
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
-
   <!-- plugins:js -->
   <script src="{%  static 'vendors/js/vendor.bundle.base.js' %}"></script>
   <!-- endinject -->
@@ -240,9 +278,7 @@
   <script src="{%  static 'js/dashboard.js' %}"></script>
   <script src="{%  static 'js/Chart.roundedBarCharts.js' %}"></script>
   <script></script>
-
-  <!-- End custom js for this page-->
+  <!-- endinject -->
 </body>
 
 </html>
-

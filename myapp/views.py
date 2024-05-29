@@ -119,3 +119,7 @@ def programas(request):
 @login_required(login_url='login')
 def videos(request):
     return render(request, 'videos.html')
+
+@login_required(login_url='login')
+def actividades(request):
+    return render(request, 'actividades.html')
