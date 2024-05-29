@@ -2,12 +2,10 @@ _______________________________
 
 SAMUEL
 que se guarde la eleccion de color del usuario
-realizar el menu de actividades
 realizar la pagina del proyecto / Seifer
 
 _______________________________ 
 
-realizar el menu de actividades
 cambiar el background de registro
 realizar los jueguitos
 --> realizar una plantilla para realizar los juegos
