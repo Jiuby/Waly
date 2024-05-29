@@ -151,6 +151,7 @@ def gestion(request):
 @login_required(login_url='login')
 def memoria_fotografica(request):
     return render(request, 'actividades/memoria_fotografica.html')
+
 @login_required(login_url='login')
 def practico(request):
     return render(request, 'actividades/practico.html')
@@ -165,3 +166,7 @@ def aprendizaje_logico(request):
 @login_required(login_url='login')
 def auditiva(request):
     return render(request, 'actividades/auditivo.html')
+
+@login_required(login_url='login')
+def actividades(request):
+    return render(request, 'actividades/actividades.html')
