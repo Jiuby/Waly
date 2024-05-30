@@ -1,0 +1,204 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Registro | Waly</title>
+    <link rel="shortcut icon" href="{%  static 'img/logo.png' %}">
+  <link rel="stylesheet" href="{% static 'css/registro.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="area" >
+        <ul class="circles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+        </ul>
+</div >
+  <section class="container">
+    <header>Formulario de registro</header>
+    <form action="{% url 'registro' %}" class="form" id="registroForm" method="post">
+    {% csrf_token %}
+    <div class="input-box">
+        <label>Nombre completo</label>
+        <input type="text" name="nombre_completo" id="nombre_completo" placeholder="Ingresa tu nombre completo" required />
+    </div>
+
+    <div class="input-box">
+        <label>Correo</label>
+        <input type="email" name="correo" id="correo" placeholder="Ingresa tu correo electrónico" required />
+        <div id="correoError" class="alert alert-danger d-none text-danger"></div> <!-- Aquí se mostrará el mensaje de error -->
+    </div>
+
+    <div class="column">
+        <div class="input-box">
+            <label>Usuario</label>
+            <input type="text" name="usuario" id="usuario" placeholder="Ingresa tu usuario" required />
+        </div>
+        <div class="input-box">
+            <label>Contraseña</label>
+            <input type="password" name="contraseña" id="contraseña" placeholder="Ingresa tu clave" required />
+        </div>
+        <div class="input-box">
+            <label>Fecha de nacimiento</label>
+            <input id="fechaNacimiento" type="date" name="fecha_nacimiento" id="fecha_nacimiento" placeholder="Ingresa tu fecha" required />
+        </div>
+    </div>
+
+    <div class="gender-box">
+        <h3>Género</h3>
+        <div class="gender-option">
+            <div class="gender">
+                <input type="radio" id="check-male" name="genero" value="Masculino" checked />
+                <label for="check-male">Masculino</label>
+            </div>
+            <div class="gender">
+                <input type="radio" id="check-female" name="genero" value="Femenino" />
+                <label for="check-female">Femenino</label>
+            </div>
+            <div class="gender">
+                <input type="radio" id="check-other" name="genero" value="Prefiero no decirlo" />
+                <label for="check-other">Prefiero no decirlo</label>
+            </div>
+        </div>
+    </div>
+
+
+
+    <button type="submit">Ingresar</button>
+    <br />
+    <p class="register-text">¿Ya tienes cuenta? <a href="{% url 'login' %}">Únete</a></p>
+</form>
+        <div id="errorCard" class="alert alert-danger d-none position-fixed" style="left: 0;"></div>
+
+  </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    const formulario = document.getElementById('registroForm');
+    formulario.addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent the form from automatically submitting
+
+        const formData = new FormData(formulario);
+        const xhr = new XMLHttpRequest();
+
+        xhr.open('POST', '/registro/');
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+
+        xhr.onload = function () {
+            const response = JSON.parse(xhr.responseText);
+            if (response.success) {
+                alert(response.message);
+                formulario.reset();
+            } else {
+                // Remove existing alerts
+                const existingAlert = document.querySelector('.alert');
+                if (existingAlert) existingAlert.remove();
+
+                // Create a new Bootstrap alert
+                const alertDiv = document.createElement('div');
+                alertDiv.className = 'alert alert-danger position-fixed';
+                alertDiv.style.cssText = 'left: -2; bottom: 0; width: 500px;';
+                alertDiv.role = 'alert';
+                alertDiv.textContent = response.message;
+
+                // Append the alert to the body
+                document.body.appendChild(alertDiv);
+
+                // Remove the alert after 3 seconds
+                setTimeout(function() {
+                    document.body.removeChild(alertDiv);
+                }, 3000);
+            }
+        };
+
+        xhr.send(formData);
+    });
+});
+window.addEventListener('load', function () {
+    // Crear un div que cubra toda la pantalla
+    var cover = document.createElement('div');
+    cover.style.position = 'fixed';
+    cover.style.top = '0';
+    cover.style.left = '0';
+    cover.style.width = '100%';
+    cover.style.height = '100%';
+    cover.style.backgroundColor = '#fdfbec';
+    cover.style.display = 'flex';
+    cover.style.justifyContent = 'center';
+    cover.style.alignItems = 'center';
+    cover.style.animation = 'disappear 1.5s forwards';
+    
+    // Crear el div del loader
+    var loader = document.createElement('div');
+    loader.className = 'loader';
+    loader.style.display = 'inline-grid';
+    
+    // Crear los pseudo-elementos :before y :after con JS
+    var loaderBefore = document.createElement('div');
+    var loaderAfter = document.createElement('div');
+    
+    [loaderBefore, loaderAfter].forEach(function (pseudo) {
+        pseudo.style.content = '""';
+        pseudo.style.height = '27px';
+        pseudo.style.aspectRatio = '5';
+        pseudo.style.setProperty('--c', '#000 90deg, #0000 0');
+        pseudo.style.background = `
+            conic-gradient(from 135deg at top, var(--c)),
+            conic-gradient(from -45deg at bottom, var(--c)) 12.5% 100%
+        `;
+        pseudo.style.backgroundSize = '20% 50%';
+        pseudo.style.backgroundRepeat = 'repeat-x';
+        pseudo.style.clipPath = 'inset(0 60% 0 0)';
+        pseudo.style.animation = 'l7 0.8s infinite linear alternate';
+    });
+
+    // Añadir estilos específicos para :after
+    loaderAfter.style.animationDirection = 'alternate-reverse';
+
+    // Añadir los pseudo-elementos al loader
+    loader.appendChild(loaderBefore);
+    loader.appendChild(loaderAfter);
+    
+    // Añadir el loader al contenedor de la pantalla completa
+    cover.appendChild(loader);
+    
+    // Añadir el contenedor al body
+    document.body.appendChild(cover);
+
+    // Definir las animaciones en JS
+    var styleSheet = document.createElement('style');
+    styleSheet.type = 'text/css';
+    styleSheet.innerText = `
+        @keyframes disappear {
+            99% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        @keyframes l7 {
+            to { clip-path: inset(0 0 0 60%); }
+        }
+    `;
+    document.head.appendChild(styleSheet);
+});
+
+    </script>
+<div class="loader"></div>
+
+</body>
+</html>

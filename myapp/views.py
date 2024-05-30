@@ -170,3 +170,12 @@ def auditiva(request):
 @login_required(login_url='login')
 def actividades(request):
     return render(request, 'actividades/actividades.html')
+
+def index(request):
+    return render(request, 'landing/index.html')
+
+def acerca(request):
+    return render(request, 'landing/about.html')
+
+def contenido(request):
+    return render(request, 'landing/courses.html')
