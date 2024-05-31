@@ -106,3 +106,6 @@ def configuracion(request):
 
 def custom_404_view(request, exception):
     return render(request, '404.html')
+
+def index(request):
+    return render(request, 'index.html')

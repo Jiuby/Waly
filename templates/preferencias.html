@@ -219,7 +219,15 @@
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
+<script>
+  // Obtener la preferencia de color del localStorage
+  const colorPreference = localStorage.getItem('colorPreference');
 
+  // Aplicar la preferencia de color si existe
+  if (colorPreference) {
+    document.body.classList.add(colorPreference);
+  }
+</script>
   <!-- plugins:js -->
   <script src="{%  static 'vendors/js/vendor.bundle.base.js' %}"></script>
   <!-- endinject -->

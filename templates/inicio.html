@@ -432,12 +432,9 @@
                 </div>
 
             <div class="col-md-4 stretch-card grid-margin">
-
-          </div>
-          <div class="row">
-            <div class="col-md-12 grid-margin stretch-card">
+                <div class="row">
+                <div class="col-md-12 grid-margin stretch-card">
                 </div>
-              </div>
             </div>
         </div>
         <!-- content-wrapper ends -->
@@ -474,6 +471,15 @@
   <script></script>
 
   <!-- End custom js for this page-->
+  <script>
+  // Obtener la preferencia de color del localStorage
+  const colorPreference = localStorage.getItem('colorPreference');
+
+  // Aplicar la preferencia de color si existe
+  if (colorPreference) {
+    document.body.classList.add(colorPreference);
+  }
+  </script>          
 </body>
 
 </html>
