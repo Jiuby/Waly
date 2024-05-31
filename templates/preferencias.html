@@ -29,8 +29,8 @@
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="{%  static 'img/logo2.svg' %}" class="mr-2" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{%  static 'img/logoMini.svg' %}"alt="logo"/></a>
+        <a class="navbar-brand brand-logo mr-5" href="{% url 'inicio' %}"><img src="{%  static 'img/logo2.svg' %}" class="mr-2" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="{% url 'inicio' %}"><img src="{%  static 'img/logoMini.svg' %}"alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -95,14 +95,13 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Programas</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Videos</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Talleres</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'programas' %}">Programas</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'videos' %}">Videos</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#charts">
+            <a class="nav-link" href="{% url 'graficas' %}">
               <i class="icon-paper menu-icon"></i>
               <span class="menu-title">Progreso</span>
             </a>
@@ -117,12 +116,67 @@
             </a>
             <div class="collapse" id="icons">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Recomendadas</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'actividades' %}">Todas</a></li>
               </ul>
             </div>
             <div class="collapse" id="icons">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Todas</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'empatia' %}">Empatia</a></li>
+              </ul>
+            </div>
+              <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'concentracion' %}">Concentración</a></li>
+              </ul>
+            </div>
+              <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'creatividad' %}">Creatividad</a></li>
+              </ul>
+            </div>
+              <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'emociones' %}">Emociones</a></li>
+              </ul>
+            </div>
+              <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'adaptabilidad' %}">Adaptabilidad</a></li>
+              </ul>
+            </div>
+              <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'gestion' %}">Gestion</a></li>
+              </ul>
+            </div>
+              <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'visual' %}">Visual</a></li>
+              </ul>
+            </div>
+              <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'auditivo' %}">Auditivo</a></li>
+              </ul>
+            </div>
+              <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'memoria_fotografica' %}">Memoria fotográfica</a></li>
+              </ul>
+            </div>
+              <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'practico' %}">Practico</a></li>
+              </ul>
+            </div>
+              <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'lectura_escritura' %}">Lectura/Escritura</a></li>
+              </ul>
+            </div>
+              <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'aprendizaje_logico' %}">Aprendizaje lógico</a></li>
               </ul>
             </div>
           </li>

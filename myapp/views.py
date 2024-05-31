@@ -92,20 +92,90 @@ def preferencias(request):
 
 @login_required(login_url='login')
 def configuracion(request):
-    form = UpdateUserForm(request.POST or None)
+    form = UpdateUserForm(request.POST or None, instance=request.user)
     if request.method == 'POST':
         if form.is_valid():
             form.save()
             messages.success(request, 'Información actualizada con éxito')
-            return redirect('configuracion')
         else:
-            messages.error(request, 'Hubo un error al actualizar la información')
-    else:
-        form = UpdateUserForm(instance=request.user)
+            for field, errors in form.errors.items():
+                for error in errors:
+                    messages.error(request, error)
+        return redirect('configuracion')  # Redirige al usuario a la misma página
     return render(request, 'cambioContraseña.html', {'nombre_completo': request.user.nombre_completo, 'correo': request.user.correo, 'contraseña': request.user.contraseña, 'usuario': request.user.usuario})
-
 def custom_404_view(request, exception):
     return render(request, '404.html')
 
+
+
+@login_required(login_url='login')
+def graficas(request):
+    return render(request, 'graficas.html')
+
+@login_required(login_url='login')
+def programas(request):
+    return render(request, 'programas.html')
+
+@login_required(login_url='login')
+def videos(request):
+    return render(request, 'videos.html')
+
+@login_required(login_url='login')
+def visual(request):
+    return render(request, 'actividades/visual.html')
+
+@login_required(login_url='login')
+def empatia(request):
+    return render(request, 'actividades/empatia.html')
+
+@login_required(login_url='login')
+def concentracion(request):
+    return render(request, 'actividades/concentracion.html')
+
+@login_required(login_url='login')
+def creatividad(request):
+    return render(request, 'actividades/creatividad.html')
+
+@login_required(login_url='login')
+def emociones(request):
+    return render(request, 'actividades/emociones.html')
+
+@login_required(login_url='login')
+def adaptabilidad(request):
+    return render(request, 'actividades/adaptabilidad.html')
+
+@login_required(login_url='login')
+def gestion(request):
+    return render(request, 'actividades/gestion.html')
+
+@login_required(login_url='login')
+def memoria_fotografica(request):
+    return render(request, 'actividades/memoria_fotografica.html')
+
+@login_required(login_url='login')
+def practico(request):
+    return render(request, 'actividades/practico.html')
+
+@login_required(login_url='login')
+def lectura_escritura(request):
+    return render(request, 'actividades/lectura_escritura.html')
+
+@login_required(login_url='login')
+def aprendizaje_logico(request):
+    return render(request, 'actividades/aprendizaje_logico.html')
+@login_required(login_url='login')
+def auditiva(request):
+    return render(request, 'actividades/auditivo.html')
+
+@login_required(login_url='login')
+def actividades(request):
+    return render(request, 'actividades/actividades.html')
+
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'landing/index.html')
+
+def acerca(request):
+    return render(request, 'landing/about.html')
+
+def contenido(request):
+    return render(request, 'landing/courses.html')

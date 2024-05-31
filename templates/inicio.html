@@ -7,7 +7,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Inicio | Walyn</title>
+  <title>Inicio | Waly</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{%  static 'vendors/feather/feather.css' %}">
   <link rel="stylesheet" href="{%  static 'vendors/ti-icons/css/themify-icons.css' %}">
@@ -29,8 +29,8 @@
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="{%  static 'img/logo2.svg' %}" class="mr-2" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{%  static 'img/logoMini.svg' %}"alt="logo"/></a>
+        <a class="navbar-brand brand-logo mr-5" href="{% url 'inicio' %}"><img src="{%  static 'img/logo2.svg' %}" class="mr-2" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="{% url 'inicio' %}"><img src="{%  static 'img/logoMini.svg' %}"alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -95,14 +95,13 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Programas</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Videos</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Talleres</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'programas' %}">Programas</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'videos' %}">Videos</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#charts">
+            <a class="nav-link" href="{% url 'graficas' %}">
               <i class="icon-paper menu-icon"></i>
               <span class="menu-title">Progreso</span>
             </a>
@@ -117,12 +116,67 @@
             </a>
             <div class="collapse" id="icons">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Recomendadas</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'actividades' %}">Todas</a></li>
               </ul>
             </div>
             <div class="collapse" id="icons">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Todas</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'empatia' %}">Empatia</a></li>
+              </ul>
+            </div>
+              <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'concentracion' %}">Concentración</a></li>
+              </ul>
+            </div>
+              <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'creatividad' %}">Creatividad</a></li>
+              </ul>
+            </div>
+              <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'emociones' %}">Emociones</a></li>
+              </ul>
+            </div>
+              <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'adaptabilidad' %}">Adaptabilidad</a></li>
+              </ul>
+            </div>
+              <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'gestion' %}">Gestion</a></li>
+              </ul>
+            </div>
+              <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'visual' %}">Visual</a></li>
+              </ul>
+            </div>
+              <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'auditivo' %}">Auditivo</a></li>
+              </ul>
+            </div>
+              <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'memoria_fotografica' %}">Memoria fotográfica</a></li>
+              </ul>
+            </div>
+              <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'practico' %}">Practico</a></li>
+              </ul>
+            </div>
+              <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'lectura_escritura' %}">Lectura/Escritura</a></li>
+              </ul>
+            </div>
+              <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'aprendizaje_logico' %}">Aprendizaje lógico</a></li>
               </ul>
             </div>
           </li>
@@ -209,18 +263,19 @@
                   <div class="card card-light-blue">
                     <div class="card-body">
                       <p class="mb-4" style="text-align: center;">Última conexión</p>
-                      <p class="fs-30 mb-2" style="text-align: center;">{{ ultimavez|date:"d F Y, H:i" }}</p>
+                      <p class="fs-30 mb-2" style="text-align: center;">{{ ultimavez|date:"d F Y" }}</p>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6 stretch-card transparent">
                   <div class="card card-light-danger">
-                    <div class="card-body">
-                      <p class="mb-4" style="text-align: center;">Desarróllate</p>
-                      <p class="fs-30 mb-2" style="text-align: center;">Actividades</p>
-                      <p class="mb-4"></p>
-
-                    </div>
+                    <a href="{% url 'actividades' %}" style="color: white;">
+                      <div class="card-body">
+                        <p class="mb-4" style="text-align: center;">Desarróllate</p>
+                        <p class="fs-30 mb-2" style="text-align: center;">Actividades</p>
+                        <p class="mb-4"></p>
+                      </div>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -244,10 +299,9 @@
                         <div class="row">
                           <div class="col-md-12 col-xl-3 d-flex flex-column justify-content-start">
                             <div class="ml-xl-4 mt-3">
-                            <p class="card-title">Detailed Reports</p>
-                              <h1 class="text-primary">$34040</h1>
-                              <h3 class="font-weight-500 mb-xl-4 text-primary">North America</h3>
-                              <p class="mb-2 mb-xl-0">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p>
+                            <p class="card-title">Tu Aprendizaje Perfecto Es:</p>
+                              <h3 class="font-weight-500 mb-xl-4 text-primary">Memoria fotográfica</h3>
+                              <p class="mb-2 mb-xl-0">Este es el aprendizaje en el cual te enfocas mas y debemos de desarollar mas a fondo</p>
                             </div>
                             </div>
                           <div class="col-md-12 col-xl-9">
@@ -256,7 +310,7 @@
                                 <div class="table-responsive mb-3 mb-md-0 mt-3">
                                   <table class="table table-borderless report-table">
                                     <tr>
-                                      <td class="text-muted">Illinois</td>
+                                      <td class="text-muted">Visual</td>
                                       <td class="w-100 px-0">
                                         <div class="progress progress-md mx-4">
                                           <div class="progress-bar bg-primary" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
@@ -265,7 +319,7 @@
                                       <td><h5 class="font-weight-bold mb-0">713</h5></td>
                                     </tr>
                                     <tr>
-                                      <td class="text-muted">Washington</td>
+                                      <td class="text-muted">Auditivo</td>
                                       <td class="w-100 px-0">
                                         <div class="progress progress-md mx-4">
                                           <div class="progress-bar bg-warning" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
@@ -274,7 +328,7 @@
                                       <td><h5 class="font-weight-bold mb-0">583</h5></td>
                                     </tr>
                                     <tr>
-                                      <td class="text-muted">Mississippi</td>
+                                      <td class="text-muted">Memoria fotográfica</td>
                                       <td class="w-100 px-0">
                                         <div class="progress progress-md mx-4">
                                           <div class="progress-bar bg-danger" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
@@ -283,7 +337,7 @@
                                       <td><h5 class="font-weight-bold mb-0">924</h5></td>
                                     </tr>
                                     <tr>
-                                      <td class="text-muted">California</td>
+                                      <td class="text-muted">Practico</td>
                                       <td class="w-100 px-0">
                                         <div class="progress progress-md mx-4">
                                           <div class="progress-bar bg-info" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
@@ -292,7 +346,7 @@
                                       <td><h5 class="font-weight-bold mb-0">664</h5></td>
                                     </tr>
                                     <tr>
-                                      <td class="text-muted">Maryland</td>
+                                      <td class="text-muted">Lectura/Escritura</td>
                                       <td class="w-100 px-0">
                                         <div class="progress progress-md mx-4">
                                           <div class="progress-bar bg-primary" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
@@ -301,7 +355,7 @@
                                       <td><h5 class="font-weight-bold mb-0">560</h5></td>
                                     </tr>
                                     <tr>
-                                      <td class="text-muted">Alaska</td>
+                                      <td class="text-muted">Aprendizaje lógico</td>
                                       <td class="w-100 px-0">
                                         <div class="progress progress-md mx-4">
                                           <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
@@ -324,10 +378,9 @@
                         <div class="row">
                           <div class="col-md-12 col-xl-3 d-flex flex-column justify-content-start">
                             <div class="ml-xl-4 mt-3">
-                            <p class="card-title">Detailed Reports</p>
-                              <h1 class="text-primary">$34040</h1>
-                              <h3 class="font-weight-500 mb-xl-4 text-primary">North America</h3>
-                              <p class="mb-2 mb-xl-0">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p>
+                            <p class="card-title">Debemos enfocarnos en:</p>
+                              <h3 class="font-weight-500 mb-xl-4 text-primary">Creatividad</h3>
+                              <p class="mb-2 mb-xl-0">Esto es lo principal que debemos de estudiar y desarollar</p>
                             </div>
                             </div>
                           <div class="col-md-12 col-xl-9">
@@ -336,7 +389,7 @@
                                 <div class="table-responsive mb-3 mb-md-0 mt-3">
                                   <table class="table table-borderless report-table">
                                     <tr>
-                                      <td class="text-muted">Illinois</td>
+                                      <td class="text-muted">Empatia</td>
                                       <td class="w-100 px-0">
                                         <div class="progress progress-md mx-4">
                                           <div class="progress-bar bg-primary" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
@@ -345,7 +398,7 @@
                                       <td><h5 class="font-weight-bold mb-0">713</h5></td>
                                     </tr>
                                     <tr>
-                                      <td class="text-muted">Washington</td>
+                                      <td class="text-muted">Concentración</td>
                                       <td class="w-100 px-0">
                                         <div class="progress progress-md mx-4">
                                           <div class="progress-bar bg-warning" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
@@ -354,7 +407,7 @@
                                       <td><h5 class="font-weight-bold mb-0">583</h5></td>
                                     </tr>
                                     <tr>
-                                      <td class="text-muted">Mississippi</td>
+                                      <td class="text-muted">Creatividad</td>
                                       <td class="w-100 px-0">
                                         <div class="progress progress-md mx-4">
                                           <div class="progress-bar bg-danger" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
@@ -363,7 +416,7 @@
                                       <td><h5 class="font-weight-bold mb-0">924</h5></td>
                                     </tr>
                                     <tr>
-                                      <td class="text-muted">California</td>
+                                      <td class="text-muted">Emociones</td>
                                       <td class="w-100 px-0">
                                         <div class="progress progress-md mx-4">
                                           <div class="progress-bar bg-info" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
@@ -372,7 +425,7 @@
                                       <td><h5 class="font-weight-bold mb-0">664</h5></td>
                                     </tr>
                                     <tr>
-                                      <td class="text-muted">Maryland</td>
+                                      <td class="text-muted">Adaptabilidad</td>
                                       <td class="w-100 px-0">
                                         <div class="progress progress-md mx-4">
                                           <div class="progress-bar bg-primary" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
@@ -381,7 +434,7 @@
                                       <td><h5 class="font-weight-bold mb-0">560</h5></td>
                                     </tr>
                                     <tr>
-                                      <td class="text-muted">Alaska</td>
+                                      <td class="text-muted">Gestion</td>
                                       <td class="w-100 px-0">
                                         <div class="progress progress-md mx-4">
                                           <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>

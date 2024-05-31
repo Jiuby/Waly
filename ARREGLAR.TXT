@@ -1,28 +1,16 @@
 _______________________________ 
 
 SAMUEL
-pantalla de carga mientras se envia el correo de registro
-dar ideas para configuracion
-dar ideas para ayuda
-agregar el menu configuracion.html
-https://www.youtube.com/watch?v=bNg1H0dOGdg&ab_channel=CodingVuDung
+que se guarde la eleccion de color del usuario
+
 _______________________________ 
-pagina 404
-mejorar login diseño
-nombre + palabras cutes en inicio.html en la mitad
-mejorar la pagina de FAQ
-volver nativo FAQ
 
-ver que se puede agregar al menu de inico pa que no se vea tan solo xd
-(cuando terminemos todo el proyecto realizar pagina de presentacion del proyecto cojer una plantilla de bootstrap)
-
+realizar los jueguitos
+--> realizar una plantilla para realizar los juegos
 catalina
 _______________________________
 MECHAS
-agregar el menu configuracion.html
-https://www.youtube.com/watch?v=bNg1H0dOGdg&ab_channel=CodingVuDung
-agregar cambio de contraseña en el menu de ajustes
-agregar cambio de correo en el menu de ajustes
+
 pasarlo a una base de datos en la nube (MySQL AZURE)
 Realizar el deploy en un servidor
 _______________________________
@@ -30,7 +18,6 @@ _______________________________
 
 A FUTURO QUE COMENZAR A REALIZAR?
 ___________________________________________
-ACTUALIZAR FAQ
 EL MENU DE PREGUNTAS PARA REALIZAR LAS PREGUNTAS PARA CONOCER A LA PERSONA
 10 PREGUNTAS SABRA DIOS QUE PREGUNTAS VAMOS A PONER
 NO TIENEN QUE SER RESPONDA TAMBIEN PODEMOS COLOCAR ANALIZAR Y QUE SELECCIONE UNA OPCION O QUE VEAN UN VIDEO
