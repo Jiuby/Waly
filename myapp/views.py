@@ -179,3 +179,7 @@ def acerca(request):
 
 def contenido(request):
     return render(request, 'landing/courses.html')
+
+@login_required(login_url='login')
+def test(request):
+    return render(request, 'test.html')

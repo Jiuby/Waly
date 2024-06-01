@@ -51,6 +51,7 @@ urlpatterns = [
     path('lectura_escritura/', myapp_views.lectura_escritura, name='lectura_escritura'),
     path('aprendizaje_logico/', myapp_views.aprendizaje_logico, name='aprendizaje_logico'),
     path('actividades/', myapp_views.actividades, name='actividades'),
+    path('test/', myapp_views.test, name='test'),
     path('logout/', auth_views.LogoutView.as_view(next_page='login'), name='logout'),
 
 ]
