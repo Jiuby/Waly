@@ -25,10 +25,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = config("DEBUG", cast=bool)
-DEBUG = True
-#ALLOWED_HOSTS = ["waly-e0v1.onrender.com"]
-ALLOWED_HOSTS = []
+DEBUG = config("DEBUG", cast=bool)
+ALLOWED_HOSTS = ["waly-e0v1.onrender.com"]
 
 
 # Application definition
@@ -90,7 +88,7 @@ DATABASES = {
     }
 }
 
-#DATABASES['default'] = dj_database_url.parse(config('DATABASE_URL'))
+DATABASES['default'] = dj_database_url.parse(config('DATABASE_URL'))
 
 
 # Password validation
