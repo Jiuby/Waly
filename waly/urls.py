@@ -26,6 +26,7 @@ handler404 = custom_404_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', myapp_views.index, name='index'),
+    path('get_user_data/', myapp_views.get_user_data, name='get_user_data'),
     path('acerca/', myapp_views.acerca, name='acerca'),
     path('contenido/', myapp_views.contenido, name='contenido'),
     path('login/', myapp_views.login_view, name='login'),
@@ -53,5 +54,8 @@ urlpatterns = [
     path('actividades/', myapp_views.actividades, name='actividades'),
     path('test/', myapp_views.test, name='test'),
     path('logout/', auth_views.LogoutView.as_view(next_page='login'), name='logout'),
+    path('', myapp_views.index, name='index'),
+    path('update_scores/', myapp_views.update_scores, name='update_scores'),
+
 
 ]

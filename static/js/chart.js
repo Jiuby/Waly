@@ -391,3 +391,32 @@ $(function() {
     });
   }
 });
+
+$(document).ready(function() {
+    // Inicializa las gráficas
+    var barChartCanvas = $("#barChart").get(0).getContext("2d");
+    var barChart = new Chart(barChartCanvas, {
+        type: 'bar',
+        data: data,
+        options: options
+    });
+
+    // Función para actualizar los datos de la gráfica
+    function updateChartData(chart, newData) {
+        console.log("Actualizando datos de la gráfica con: ", newData); // Agrega console.log aquí
+        chart.data.datasets[0].data = newData;
+        chart.update();
+    }
+
+    // Realiza una solicitud AJAX para obtener los datos del usuario
+    $.ajax({
+         url: '/get_user_data/',  // Reemplaza esto con la ruta correcta a tu vista
+        method: 'GET',
+        success: function(data) {
+            console.log("Datos recibidos del servidor: ", data); // Agrega console.log aquí
+            var newData = [data.visual, data.auditivo, data.memoria_fotografica, data.practico, data.lectura_escritura, data.aprendizaje_logico];
+            var newLabel = ["Visual Porcentaje", "Auditivo", "Memoria fotográfica", "Practico", "Lectura/Escritura", "Aprendizaje lógico"];
+            updateChartData(barChart, newData, newLabel);
+        }
+    });
+});

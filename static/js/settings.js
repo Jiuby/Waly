@@ -1,16 +1,26 @@
 (function($) {
   'use strict';
-  $(function() {
-    $(".nav-settings").on("click", function() {
-      $("#right-sidebar").toggleClass("open");
-    });
-    $(".settings-close").on("click", function() {
-      $("#right-sidebar,#theme-settings").removeClass("open");
-    });
 
-    $("#settings-trigger").on("click" , function(){
-      $("#theme-settings").toggleClass("open");
-    });
+  function saveColorPreference(sidebarColor, navbarColor) {
+    const colorPreference = {
+      sidebarColor: sidebarColor,
+      navbarColor: navbarColor
+    };
+    localStorage.setItem('colorPreference', JSON.stringify(colorPreference));
+  }
+
+  $(function() {
+    const colorPreferenceString = localStorage.getItem('colorPreference');
+    const colorPreference = colorPreferenceString ? JSON.parse(colorPreferenceString) : {};
+
+    // Aplicar las preferencias si existen
+    if (colorPreference.sidebarColor) {
+      $("body").addClass(colorPreference.sidebarColor);
+    }
+
+    if (colorPreference.navbarColor) {
+      $(".navbar").addClass(colorPreference.navbarColor);
+    }
 
 
     //background constants
@@ -19,67 +29,83 @@
     var $body = $("body");
 
     //sidebar backgrounds
-    $("#sidebar-light-theme").on("click" , function(){
-      $body.removeClass(sidebar_classes);
-      $body.addClass("sidebar-light");
-      $(".sidebar-bg-options").removeClass("selected");
-      $(this).addClass("selected");
-    });
-    $("#sidebar-dark-theme").on("click" , function(){
-      $body.removeClass(sidebar_classes);
-      $body.addClass("sidebar-dark");
-      $(".sidebar-bg-options").removeClass("selected");
-      $(this).addClass("selected");
-    });
+    $("#sidebar-light-theme").on("click", function() {
+    $body.removeClass(sidebar_classes);
+    $body.addClass("sidebar-light");
+    $(".sidebar-bg-options").removeClass("selected");
+    $(this).addClass("selected");
+    saveColorPreference('sidebar-light', localStorage.getItem('navbarColorPreference') || '');
+  });
 
+    $("#sidebar-dark-theme").on("click", function() {
+    $body.removeClass(sidebar_classes);
+    $body.addClass("sidebar-dark");
+    $(".sidebar-bg-options").removeClass("selected");
+    $(this).addClass("selected");
+    saveColorPreference('sidebar-dark', localStorage.getItem('navbarColorPreference') || '');
+  });
 
-    //Navbar Backgrounds
-    $(".tiles.primary").on("click" , function(){
-      $(".navbar").removeClass(navbar_classes);
-      $(".navbar").addClass("navbar-primary");
-      $(".tiles").removeClass("selected");
-      $(this).addClass("selected");
-    });
-    $(".tiles.success").on("click" , function(){
-      $(".navbar").removeClass(navbar_classes);
-      $(".navbar").addClass("navbar-success");
-      $(".tiles").removeClass("selected");
-      $(this).addClass("selected");
-    });
-    $(".tiles.warning").on("click" , function(){
-      $(".navbar").removeClass(navbar_classes);
-      $(".navbar").addClass("navbar-warning");
-      $(".tiles").removeClass("selected");
-      $(this).addClass("selected");
-    });
-    $(".tiles.danger").on("click" , function(){
-      $(".navbar").removeClass(navbar_classes);
-      $(".navbar").addClass("navbar-danger");
-      $(".tiles").removeClass("selected");
-      $(this).addClass("selected");
-    });
-    $(".tiles.light").on("click" , function(){
-      $(".navbar").removeClass(navbar_classes);
-      $(".navbar").addClass("navbar-light");
-      $(".tiles").removeClass("selected");
-      $(this).addClass("selected");
-    });
-    $(".tiles.info").on("click" , function(){
-      $(".navbar").removeClass(navbar_classes);
-      $(".navbar").addClass("navbar-info");
-      $(".tiles").removeClass("selected");
-      $(this).addClass("selected");
-    });
-    $(".tiles.dark").on("click" , function(){
-      $(".navbar").removeClass(navbar_classes);
-      $(".navbar").addClass("navbar-dark");
-      $(".tiles").removeClass("selected");
-      $(this).addClass("selected");
-    });
-    $(".tiles.default").on("click" , function(){
-      $(".navbar").removeClass(navbar_classes);
-      $(".tiles").removeClass("selected");
-      $(this).addClass("selected");
-    });
+$(".tiles.primary").on("click", function() {
+  $(".navbar").addClass("navbar-primary"); // Agregar la nueva clase primero
+  $(".navbar").removeClass(navbar_classes); // Luego eliminar las demás clases
+  $(".tiles").removeClass("selected");
+  $(this).addClass("selected");
+  saveColorPreference(localStorage.getItem('sidebarColorPreference') || '', 'navbar-primary');
+});
+
+$(".tiles.success").on("click", function() {
+  $(".navbar").addClass("navbar-success");
+  $(".navbar").removeClass(navbar_classes);
+  $(".tiles").removeClass("selected");
+  $(this).addClass("selected");
+  saveColorPreference(localStorage.getItem('sidebarColorPreference') || '', 'navbar-success');
+});
+
+$(".tiles.warning").on("click", function() {
+  $(".navbar").addClass("navbar-warning");
+  $(".navbar").removeClass(navbar_classes);
+  $(".tiles").removeClass("selected");
+  $(this).addClass("selected");
+  saveColorPreference(localStorage.getItem('sidebarColorPreference') || '', 'navbar-warning');
+});
+
+$(".tiles.danger").on("click", function() {
+  $(".navbar").addClass("navbar-danger");
+  $(".navbar").removeClass(navbar_classes);
+  $(".tiles").removeClass("selected");
+  $(this).addClass("selected");
+  saveColorPreference(localStorage.getItem('sidebarColorPreference') || '', 'navbar-danger');
+});
+
+$(".tiles.light").on("click", function() {
+  $(".navbar").addClass("navbar-light");
+  $(".navbar").removeClass(navbar_classes);
+  $(".tiles").removeClass("selected");
+  $(this).addClass("selected");
+  saveColorPreference(localStorage.getItem('sidebarColorPreference') || '', 'navbar-light');
+});
+
+$(".tiles.info").on("click", function() {
+  $(".navbar").addClass("navbar-info");
+  $(".navbar").removeClass(navbar_classes);
+  $(".tiles").removeClass("selected");
+  $(this).addClass("selected");
+  saveColorPreference(localStorage.getItem('sidebarColorPreference') || '', 'navbar-info');
+});
+
+$(".tiles.dark").on("click", function() {
+  $(".navbar").addClass("navbar-dark");
+  $(".navbar").removeClass(navbar_classes);
+  $(".tiles").removeClass("selected");
+  $(this).addClass("selected");
+  saveColorPreference(localStorage.getItem('sidebarColorPreference') || '', 'navbar-dark');
+});
+
+$(".tiles.default").on("click", function() {
+  $(".navbar").removeClass(navbar_classes);
+  $(".tiles").removeClass("selected");
+  $(this).addClass("selected");
+  saveColorPreference('', '');
+});
   });
 })(jQuery);
