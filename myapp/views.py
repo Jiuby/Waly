@@ -15,17 +15,7 @@ import re
 
 # Create your views here.
 
-def get_user_data(request):
-    user = user.objects.get(username=request.user.username)  # Obtiene el usuario actual
-    data = {
-        'visual': user.visual,
-        'auditivo': user.auditivo,
-        'memoria_fotografica': user.memoria_fotografica,
-        'practico': user.practico,
-        'lectura_escritura': user.lectura_escritura,
-        'aprendizaje_logico': user.aprendizaje_logico,
-    }
-    return JsonResponse(data)
+
 
 def login_view(request):
     if request.method == 'POST':
