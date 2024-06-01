@@ -1075,6 +1075,7 @@ const surveyJson = {
    "title": "Adaptabilidad"
   }
  ]
+
 }
 
 
@@ -1145,24 +1146,13 @@ function calculatePoints(survey) {
 
 function alertResults (sender) {
     const points = calculatePoints(sender);
-
-    // Convertir los puntos a JSON
-    const data = JSON.stringify(points);
-
-    // Hacer la solicitud AJAX
-    $.ajax({
-        url: updateScoresUrl,
-        type: 'POST',
-        data: data,
-        contentType: 'application/json',
-        success: function(response) {
-            // Aquí puedes manejar la respuesta del servidor
-            console.log(response);
-        },
-        error: function(error) {
-            // Aquí puedes manejar los errores
-            console.log(error);
-        }
-    });
+    // alert(JSON.stringify(points));
 }
 
+survey.onComplete.add(function(sender, options) {
+    // Esconder el div del survey
+    document.getElementById('surveyContainer').style.display = 'none';
+
+    // Redirigir al usuario a la página de inicio
+    window.location.href = '/inicio/';
+});
