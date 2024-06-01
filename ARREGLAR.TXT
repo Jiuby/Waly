@@ -3,6 +3,7 @@ _______________________________
 SAMUEL
 que se guarde la eleccion de color del usuario
 
+
 _______________________________ 
 
 realizar los jueguitos
