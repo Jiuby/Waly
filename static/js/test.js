@@ -1155,4 +1155,5 @@ survey.onComplete.add(function(sender, options) {
 
     // Redirigir al usuario a la página de inicio
     window.location.href = '/inicio/';
+
 });
