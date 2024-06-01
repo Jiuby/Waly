@@ -87,7 +87,7 @@ const surveyJson = {
     {
      "type": "html",
      "name": "question5",
-     "html": "                <div class=\"card-body\">\n\n                    <iframe width=\"540\" height=\"315\" src=\"https://www.youtube.com/embed/f26KyGr6y8w?si=36mgMleSdPxamQXh\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>\n                </div>"
+     "html": "                <div class=\"card-body\">\n\n                    <iframe width=\"540\" height=\"315\" src=\"https://www.youtube.com/embed/GLis0VZ9coE?si=r1nfTWUhC4ku5Y4u\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>\n                </div>"
     },
     {
      "type": "checkbox",
@@ -375,7 +375,8 @@ const surveyJson = {
        "puntos": {
         "practico": 50,
         "auditivo": 25,
-        "concentracion": 10
+        "concentracion": 10,
+        "gestion": 10,
       }
       },
       {
@@ -384,7 +385,8 @@ const surveyJson = {
        "puntos": {
         "practico": 50,
         "creatividad": 25,
-        "adaptabilidad": 10
+        "adaptabilidad": 10,
+        "gestion": 30,
       }
       },
       {
@@ -393,7 +395,8 @@ const surveyJson = {
        "puntos": {
         "lectura_escritura": 50,
         "aprendizaje_logico": 25,
-        "concentracion": 10
+        "concentracion": 10,
+        "gestion": 20,
       }
       },
       {
@@ -402,7 +405,8 @@ const surveyJson = {
        "puntos": {
         "visual": 50,
         "memoria_fotografica": 25,
-        "practico": 10
+        "practico": 10,
+        "gestion": 10,
       }
       }
      ]
@@ -426,7 +430,8 @@ const surveyJson = {
        "puntos": {
         "practico": 50,
         "creatividad": 25,
-        "adaptabilidad": 10
+        "adaptabilidad": 10,
+        "gestion": 30,
         }
       },
       {
@@ -435,7 +440,8 @@ const surveyJson = {
        "puntos": {
         "lectura_escritura": 50,
         "aprendizaje_logico": 25,
-        "practico": 10
+        "practico": 10,
+        "gestion": 20,
         }
       },
       {
@@ -444,7 +450,8 @@ const surveyJson = {
        "puntos": {
         "auditivo": 50,
         "empatia": 25,
-        "practico": 10
+        "practico": 10,
+        "gestion": 10,
         }
       },
      ]
@@ -564,6 +571,7 @@ const surveyJson = {
        "puntos": {
         "concentracion": 50,
         "adaptabilidad": 25,
+        "gestion": 10,
         }
       },
       {
@@ -571,6 +579,7 @@ const surveyJson = {
        "text": "Ignoro el ruido y sigo trabajando sin problema.",
        "puntos": {
         "concentracion": 50,
+        "gestion": 30,
         }
       },
       {
@@ -584,7 +593,10 @@ const surveyJson = {
        "value": "Item 4",
        "text": "Me levanto inmediatamente para ver quién está en la puerta.",
        "puntos": {
-        "adaptabilidad": 50,
+        "adaptabilidad": 30,
+        "adaptabilidad": 30,
+        "concentracion": 40,
+        "gestion": 20,
         }
       }
      ]
@@ -695,6 +707,7 @@ const surveyJson = {
          "puntos": {
           "lectura_escritura": 40,
           "aprendizaje_logico": 30,
+          "gestion": 30,
       },
         },
       {
@@ -702,6 +715,7 @@ const surveyJson = {
        "text": "Porque es una estrella que gira alrededor de la Tierra y proporciona luz para la fotosíntesis.",
             "puntos": {
             "lectura_escritura": 20,
+             "gestion": 10,
       },
         },
       {
@@ -710,6 +724,7 @@ const surveyJson = {
             "puntos": {
             "lectura_escritura": 30,
             "aprendizaje_logico": 20,
+             "gestion": 20,
       },
         },
       {
@@ -783,6 +798,7 @@ const surveyJson = {
        "text": "Estación A",
             "puntos": {
             "aprendizaje_logico": 40,
+             "gestion": 20,
 
       },
         },
@@ -798,6 +814,7 @@ const surveyJson = {
        "text": "Estación C",
             "puntos": {
             "aprendizaje_logico": 30,
+                "gestion": 10,
       },
         }
      ]
@@ -821,7 +838,8 @@ const surveyJson = {
          "puntos": {
           "aprendizaje_logico": 50,
           "concentracion": 30,
-          "creatividad": 20
+          "creatividad": 20,
+          "gestion": 20,
          }
       },
       {
@@ -830,7 +848,8 @@ const surveyJson = {
             "puntos": {
             "aprendizaje_logico": 30,
             "concentracion": 20,
-            "creatividad": 10
+            "creatividad": 10,
+            "gestion": 10,
             }
       },
       {
@@ -839,7 +858,8 @@ const surveyJson = {
             "puntos": {
             "aprendizaje_logico": 40,
             "concentracion": 20,
-            "creatividad": 10
+            "creatividad": 10,
+            "gestion": 10,
             }
       },
       {
@@ -994,6 +1014,7 @@ const surveyJson = {
        "text": "Buscaría una alternativa, como tomar un taxi o caminar si está cerca.",
             "puntos": {
             "adaptabilidad": 30,
+             "gestion": 10,
       },
         },
       {
@@ -1023,6 +1044,7 @@ const surveyJson = {
        "text": "Pediría direcciones a una persona cercana.",
          "puntos": {
           "adaptabilidad": 40,
+          "gestion": 20,
       },
         },
       {
@@ -1037,6 +1059,7 @@ const surveyJson = {
        "text": "Entraría en una tienda cercana para ver si tienen un mapa que pueda usar.",
             "puntos": {
             "adaptabilidad": 30,
+                "gestion": 10,
       },
         },
       {
@@ -1053,6 +1076,7 @@ const surveyJson = {
   }
  ]
 }
+
 
 const survey = new Survey.Model(surveyJson);
 
@@ -1071,7 +1095,8 @@ $(function() {
     $("#surveyContainer").Survey({ model: survey });
 });
 
-function calculatePoints(results) {
+function calculatePoints(survey) {
+    // Inicializar los puntos para cada categoría
     const points = {
         visual: 0,
         auditivo: 0,
@@ -1086,4 +1111,58 @@ function calculatePoints(results) {
         adaptabilidad: 0,
         gestion: 0
     };
+
+    // Recorrer las respuestas del usuario
+    for (let questionName in survey.data) {
+        let userAnswers = survey.data[questionName];
+
+        // Asegurarse de que userAnswers es un array
+        if (!Array.isArray(userAnswers)) {
+            userAnswers = [userAnswers];
+        }
+
+        // Buscar la pregunta en el JSON de la encuesta
+        for (let page of surveyJson.pages) {
+            for (let question of page.elements) {
+                if (question.name === questionName) {
+                    // Encontrar la opción que el usuario eligió
+                    for (let choice of question.choices) {
+                        if (userAnswers.includes(choice.value)) {
+                            // Sumar los puntos a los totales
+                            for (let category in choice.puntos) {
+                                points[category] += choice.puntos[category];
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Devolver los puntos totales
+    return points;
 }
+
+function alertResults (sender) {
+    const points = calculatePoints(sender);
+
+    // Convertir los puntos a JSON
+    const data = JSON.stringify(points);
+
+    // Hacer la solicitud AJAX
+    $.ajax({
+        url: updateScoresUrl,
+        type: 'POST',
+        data: data,
+        contentType: 'application/json',
+        success: function(response) {
+            // Aquí puedes manejar la respuesta del servidor
+            console.log(response);
+        },
+        error: function(error) {
+            // Aquí puedes manejar los errores
+            console.log(error);
+        }
+    });
+}
+

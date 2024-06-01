@@ -1,14 +1,31 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.core.mail import send_mail
 from .forms import RegistroForm, LoginForm, UpdateUserForm, actualizarPreferencias
 from django.contrib.auth import authenticate, login
 from django.http import JsonResponse, HttpResponse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from rest_framework import viewsets
+from rest_framework import response
+from .models import Usuario
+from .serializers import UsuarioSerializer
+from django.views.decorators.csrf import csrf_exempt
+import json
 import re
 
 # Create your views here.
 
+def get_user_data(request):
+    user = user.objects.get(username=request.user.username)  # Obtiene el usuario actual
+    data = {
+        'visual': user.visual,
+        'auditivo': user.auditivo,
+        'memoria_fotografica': user.memoria_fotografica,
+        'practico': user.practico,
+        'lectura_escritura': user.lectura_escritura,
+        'aprendizaje_logico': user.aprendizaje_logico,
+    }
+    return JsonResponse(data)
 
 def login_view(request):
     if request.method == 'POST':
@@ -68,7 +85,56 @@ def registro(request):
 
 @login_required(login_url='login')  # Redirige a 'login' si el usuario no ha iniciado sesión
 def inicio(request):
-    return render(request, 'inicio.html', {'nombre_completo': request.user.nombre_completo, 'correo': request.user.correo, 'ultimavez': request.user.last_login})
+    user = request.user
+    fields = ['empatia', 'concentracion', 'creatividad', 'emociones', 'adaptabilidad', 'gestion']
+    fields2 = ['auditivo', 'visual', 'memoria_fotografica', 'practico', 'lectura_escritura', 'aprendizaje_logico']
+    max_field = max(fields2, key=lambda f: getattr(user, f))
+    min_field = min(fields, key=lambda f: getattr(user, f))
+    visual_porcentaje = (user.visual / 300) * 100
+    auditivo_porcentaje = (user.auditivo / 300) * 100
+    memoria_fotografica_porcentaje = (user.memoria_fotografica / 300) * 100
+    emociones_porcentaje = (user.emociones / 300) * 100
+    practico_porcentaje = (user.practico / 300) * 100
+    lectura_escritura_porcentaje = (user.lectura_escritura / 300) * 100
+    aprendizaje_logico_porcentaje = (user.aprendizaje_logico / 300) * 100
+    concentracion_porcentaje = (user.concentracion / 300) * 100
+    creatividad_porcentaje = (user.creatividad / 300) * 100
+    adaptabilidad_porcentaje = (user.adaptabilidad / 300) * 100
+    gestion_porcentaje = (user.gestion / 300) * 100
+    empatia_porcentaje = (user.empatia / 300) * 100
+    return render(request, 'inicio.html', {
+        'nombre_completo': request.user.nombre_completo,
+        'correo': request.user.correo,
+        'ultimavez': request.user.last_login,
+        'auditivo': request.user.auditivo,
+        'visual': request.user.visual,
+        'memoria_fotografica': request.user.memoria_fotografica,
+        'emociones': request.user.emociones,
+        'practico': request.user.practico,
+        'lectura_escritura': request.user.lectura_escritura,
+        'aprendizaje_logico': request.user.aprendizaje_logico,
+        'concentracion': request.user.concentracion,
+        'creatividad': request.user.creatividad,
+        'adaptabilidad': request.user.adaptabilidad,
+        'gestion': request.user.gestion,
+        'empatia':request.user.empatia,
+        'min_field': min_field,
+        'max_field': max_field,
+        'visual_porcentaje': visual_porcentaje,
+        'auditivo_porcentaje': auditivo_porcentaje,
+        'memoria_fotografica_porcentaje': memoria_fotografica_porcentaje,
+        'emociones_porcentaje': emociones_porcentaje,
+        'practico_porcentaje': practico_porcentaje,
+        'lectura_escritura_porcentaje': lectura_escritura_porcentaje,
+        'aprendizaje_logico_porcentaje': aprendizaje_logico_porcentaje,
+        'concentracion_porcentaje': concentracion_porcentaje,
+        'creatividad_porcentaje': creatividad_porcentaje,
+        'adaptabilidad_porcentaje': adaptabilidad_porcentaje,
+        'gestion_porcentaje': gestion_porcentaje,
+        'empatia_porcentaje': empatia_porcentaje
+
+
+    })
 
 @login_required(login_url='login')  # Redirige a 'login' si el usuario no ha iniciado sesión
 def faq(request):
@@ -110,8 +176,22 @@ def custom_404_view(request, exception):
 
 @login_required(login_url='login')
 def graficas(request):
-    return render(request, 'graficas.html')
-
+    # Obtener los datos del usuario
+    datos_usuario = {
+        'auditivo': request.user.auditivo,
+        'visual': request.user.visual,
+        'memoria_fotografica': request.user.memoria_fotografica,
+        'emociones': request.user.emociones,
+        'practico': request.user.practico,
+        'lectura_escritura': request.user.lectura_escritura,
+        'aprendizaje_logico': request.user.aprendizaje_logico,
+        'concentracion': request.user.concentracion,
+        'creatividad': request.user.creatividad,
+        'adaptabilidad': request.user.adaptabilidad,
+        'gestion': request.user.gestion,
+        'empatia':request.user.empatia,
+    }
+    return render(request, 'graficas.html', {'auditivo': request.user.auditivo, 'visual': request.user.visual, 'memoria_fotografica': request.user.memoria_fotografica, 'emociones': request.user.emociones, 'practico': request.user.practico, 'lectura_escritura': request.user.lectura_escritura, 'aprendizaje_logico': request.user.aprendizaje_logico, 'concentracion': request.user.concentracion, 'creatividad': request.user.creatividad, 'adaptabilidad': request.user.adaptabilidad, 'gestion': request.user.gestion, 'empatia': request.user.empatia})
 @login_required(login_url='login')
 def programas(request):
     return render(request, 'programas.html')
@@ -183,3 +263,27 @@ def contenido(request):
 @login_required(login_url='login')
 def test(request):
     return render(request, 'test.html')
+
+class UsuarioViewSet(viewsets.ModelViewSet):
+    queryset = Usuario.objects.all()
+    serializer_class = UsuarioSerializer
+
+
+@login_required
+@csrf_exempt
+def update_scores(request):
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body)
+            user_profile = get_object_or_404(Usuario, usuario=request.user.usuario)
+
+            # Actualizar los campos con los puntos recibidos
+            for field, value in data.items():
+                if hasattr(user_profile, field):
+                    setattr(user_profile, field, value)
+
+            user_profile.save()
+            return JsonResponse({'status': 'success'})
+        except Exception as e:
+            return JsonResponse({'status': 'error', 'message': str(e)})
+    return JsonResponse({'status': 'invalid request'}, status=400)
