@@ -22,7 +22,7 @@ const surveyJson = {
      "choices": [
       {
        "value": "Item 1",
-       "text": "Sí, los diagramas y gráficos me ayudan mucho más a entender la información."
+       "text": "Sí, los diagramas y gráficos me ayudan mucho más a entender la información.",
        "puntos": {
         "visual": 50,
         "memoria_fotografica": 25,
@@ -32,7 +32,7 @@ const surveyJson = {
       },
       {
        "value": "Item 2",
-       "text": "Prefiero escuchar la explicación verbal, aunque los gráficos también ayudan."
+       "text": "Prefiero escuchar la explicación verbal, aunque los gráficos también ayudan.",
        "puntos": {
         "visual": 10,
         "lectura_escritura": 25,
@@ -58,7 +58,7 @@ const surveyJson = {
      "choices": [
       {
        "value": "Item 1",
-       "text": "Sí, los mapas mentales y esquemas me ayudan a recordar mejor."
+       "text": "Sí, los mapas mentales y esquemas me ayudan a recordar mejor.",
        "puntos": {
         "visual": 50,
         "memoria_fotografica": 25,
@@ -67,7 +67,7 @@ const surveyJson = {
       },
       {
        "value": "Item 2",
-       "text": "A veces, pero también puedo recordar la información leyendo un texto."
+       "text": "A veces, pero también puedo recordar la información leyendo un texto.",
        "puntos": {
         "visual": 10,
         "lectura_escritura": 25,
@@ -96,7 +96,7 @@ const surveyJson = {
      "choices": [
       {
        "value": "Item 1",
-       "text": "Paz y Relajacion"
+       "text": "Paz y Relajacion",
        "puntos": {
         "auditivo": 50,
         "emociones": 25,
@@ -106,7 +106,7 @@ const surveyJson = {
       },
       {
        "value": "Item 2",
-       "text": "Nostalgia"
+       "text": "Nostalgia",
        "puntos": {
         "auditivo": 50,
         "emociones": 25,
@@ -115,7 +115,7 @@ const surveyJson = {
       },
       {
        "value": "Item 3",
-       "text": "Dolor"
+       "text": "Dolor",
        "puntos": {
         "auditivo": 50,
         "emociones": 25,
@@ -134,7 +134,7 @@ const surveyJson = {
      "choices": [
       {
        "value": "Item 1",
-       "text": "No, prefiero escribir notas para recordar la información."
+       "text": "No, prefiero escribir notas para recordar la información.",
        "puntos": {
         "lectura_escritura": 50,
         "aprendizaje_logico": 25,
@@ -143,7 +143,7 @@ const surveyJson = {
       },
       {
        "value": "Item 2",
-       "text": "Sí, generalmente puedo recordar lo que escucho sin escribir."
+       "text": "Sí, generalmente puedo recordar lo que escucho sin escribir.",
        "puntos": {
         "auditivo": 50,
         "memoria_fotografica": 25,
@@ -182,15 +182,30 @@ const surveyJson = {
      "choices": [
       {
        "value": "Item 1",
-       "text": "6"
+       "text": "6",
+       "puntos": {
+        "memoria_fotografica": 40,
+        "visual": 30,
+        "concentracion": 20
+      }
       },
       {
        "value": "Item 2",
-       "text": "10"
+       "text": "10",
+       "puntos": {
+        "memoria_fotografica": 40,
+        "visual": 30,
+        "concentracion": 20
+      }
       },
       {
        "value": "Item 3",
-       "text": "8"
+       "text": "8",
+         "puntos": {
+          "memoria_fotografica": 50,
+          "visual": 40,
+          "concentracion": 30
+      },
       }
      ],
      "showNoneItem": true
@@ -202,16 +217,27 @@ const surveyJson = {
      "choices": [
       {
        "value": "Item 1",
-       "text": "3"
+       "text": "3",
+       "puntos": {
+        "memoria_fotografica": 20,
+        "visual": 10
+      }
       },
       {
        "value": "Item 2",
-       "text": "4"
+       "text": "4",
+       "puntos": {
+        "memoria_fotografica": 10
+       }
       },
       {
        "value": "Item 3",
-       "text": "1"
-      }
+       "text": "1",
+         "puntos": {
+          "memoria_fotografica": 30,
+          "visual": 20
+      },
+        }
      ],
      "showNoneItem": true
     }
@@ -345,7 +371,7 @@ const surveyJson = {
      "choices": [
       {
        "value": "Item 1",
-       "text": "Prefiero que alguien me explique los pasos y luego intento ensamblarla yo mismo."
+       "text": "Prefiero que alguien me explique los pasos y luego intento ensamblarla yo mismo.",
        "puntos": {
         "practico": 50,
         "auditivo": 25,
@@ -354,7 +380,7 @@ const surveyJson = {
       },
       {
        "value": "Item 4",
-       "text": "Prefiero experimentar y ensamblarla sin seguir instrucciones específicas."
+       "text": "Prefiero experimentar y ensamblarla sin seguir instrucciones específicas.",
        "puntos": {
         "practico": 50,
         "creatividad": 25,
@@ -363,7 +389,7 @@ const surveyJson = {
       },
       {
        "value": "Item 5",
-       "text": "Prefiero leer un manual de instrucciones detallado y ensamblarla siguiendo cada paso."
+       "text": "Prefiero leer un manual de instrucciones detallado y ensamblarla siguiendo cada paso.",
        "puntos": {
         "lectura_escritura": 50,
         "aprendizaje_logico": 25,
@@ -372,7 +398,7 @@ const surveyJson = {
       },
       {
        "value": "Item 3",
-       "text": "Prefiero ver un video tutorial una vez y luego ensamblarla siguiendo lo que recuerdo."
+       "text": "Prefiero ver un video tutorial una vez y luego ensamblarla siguiendo lo que recuerdo.",
        "puntos": {
         "visual": 50,
         "memoria_fotografica": 25,
@@ -396,7 +422,7 @@ const surveyJson = {
      "choices": [
       {
        "value": "Item 1",
-       "text": "Improviso con lo que tengo disponible en la cocina y continúo con la receta."
+       "text": "Improviso con lo que tengo disponible en la cocina y continúo con la receta.",
        "puntos": {
         "practico": 50,
         "creatividad": 25,
@@ -405,7 +431,7 @@ const surveyJson = {
       },
       {
        "value": "Item 3",
-       "text": "Consulto un libro de cocina o una página web para encontrar un sustituto adecuado y luego lo uso."
+       "text": "Consulto un libro de cocina o una página web para encontrar un sustituto adecuado y luego lo uso.",
        "puntos": {
         "lectura_escritura": 50,
         "aprendizaje_logico": 25,
@@ -414,7 +440,7 @@ const surveyJson = {
       },
       {
        "value": "Item 4",
-       "text": "Llamo o pregunto a alguien con experiencia en cocina para que me aconseje y luego aplico su consejo."
+       "text": "Llamo o pregunto a alguien con experiencia en cocina para que me aconseje y luego aplico su consejo.",
        "puntos": {
         "auditivo": 50,
         "empatia": 25,
@@ -444,7 +470,7 @@ const surveyJson = {
      "choices": [
       {
        "value": "Item 1",
-       "text": "Me acerco a él y le pregunto cómo se siente."
+       "text": "Me acerco a él y le pregunto cómo se siente.",
        "puntos": {
         "empatia": 50,
         "adaptabilidad": 25,
@@ -452,21 +478,21 @@ const surveyJson = {
       },
       {
        "value": "Item 2",
-       "text": "Le dejo tranquilo porque quizás quiere estar solo."
+       "text": "Le dejo tranquilo porque quizás quiere estar solo.",
        "puntos": {
         "empatia": 50,
         }
       },
       {
        "value": "Item 3",
-       "text": "Le miro de lejos para ver si alguien más se acerca a hablar con él."
+       "text": "Le miro de lejos para ver si alguien más se acerca a hablar con él.",
        "puntos": {
         "empatia": 25,
         }
       },
       {
        "value": "Item 4",
-       "text": "No sé qué hacer en esa situación."
+       "text": "No sé qué hacer en esa situación.",
        "puntos": {
         "empatia": 10,
         }
@@ -485,19 +511,31 @@ const surveyJson = {
      "choices": [
       {
        "value": "Item 1",
-       "text": "Molesta"
+       "text": "Molesta",
+       "puntos": {
+        "empatia": 30,
+       }
       },
       {
        "value": "Item 2",
-       "text": "Decaída"
+       "text": "Decaída",
+         "puntos": {
+          "empatia": 20,
+         }
       },
       {
        "value": "Item 3",
-       "text": "Enojada"
+       "text": "Enojada",
+            "puntos": {
+            "empatia": 40,
+            }
       },
       {
        "value": "Item 4",
-       "text": "Contenta"
+       "text": "Contenta",
+       "puntos": {
+        "empatia": 10,
+       }
       }
      ]
     }
@@ -522,7 +560,7 @@ const surveyJson = {
      "choices": [
       {
        "value": "Item 1",
-       "text": "Sigo trabajando pero me cuesta mucho concentrarme por el ruido."
+       "text": "Sigo trabajando pero me cuesta mucho concentrarme por el ruido.",
        "puntos": {
         "concentracion": 50,
         "adaptabilidad": 25,
@@ -530,21 +568,21 @@ const surveyJson = {
       },
       {
        "value": "Item 2",
-       "text": "Ignoro el ruido y sigo trabajando sin problema."
+       "text": "Ignoro el ruido y sigo trabajando sin problema.",
        "puntos": {
         "concentracion": 50,
         }
       },
       {
        "value": "Item 3",
-       "text": "Me pongo nervioso y no puedo continuar con la tarea."
+       "text": "Me pongo nervioso y no puedo continuar con la tarea.",
        "puntos": {
         "concentracion": 25,
         }
       },
       {
        "value": "Item 4",
-       "text": "Me levanto inmediatamente para ver quién está en la puerta."
+       "text": "Me levanto inmediatamente para ver quién está en la puerta.",
        "puntos": {
         "adaptabilidad": 50,
         }
@@ -578,19 +616,37 @@ const surveyJson = {
      "choices": [
       {
        "value": "Item 1",
-       "text": "Tres o cuatro"
+       "text": "Tres o cuatro",
+       "puntos": {
+        "memoria_fotografica": 10,
+        "visual": 10,
+        "concentracion": 20
       },
+        },
       {
        "value": "Item 2",
-       "text": "Uno o dos"
+       "text": "Uno o dos",
+         "puntos": {
+          "concentracion": 10
       },
+        },
       {
        "value": "Item 3",
-       "text": "Cinco o seis"
+       "text": "Cinco o seis",
+       "puntos": {
+            "memoria_fotografica": 20,
+            "visual": 20,
+            "concentracion": 30
       },
+        },
       {
        "value": "Item 4",
-       "text": "Más de seis"
+       "text": "Más de seis",
+       "puntos": {
+        "memoria_fotografica": 30,
+        "visual": 30,
+        "concentracion": 40
+       }
       }
      ]
     }
@@ -635,20 +691,34 @@ const surveyJson = {
      "choices": [
       {
        "value": "Item 1",
-       "text": "Porque proporciona luz y calor, permite la fotosíntesis, y su energía se aprovecha mediante paneles solares para generar electricidad."
+       "text": "Porque proporciona luz y calor, permite la fotosíntesis, y su energía se aprovecha mediante paneles solares para generar electricidad.",
+         "puntos": {
+          "lectura_escritura": 40,
+          "aprendizaje_logico": 30,
       },
+        },
       {
        "value": "Item 2",
-       "text": "Porque es una estrella que gira alrededor de la Tierra y proporciona luz para la fotosíntesis."
+       "text": "Porque es una estrella que gira alrededor de la Tierra y proporciona luz para la fotosíntesis.",
+            "puntos": {
+            "lectura_escritura": 20,
       },
+        },
       {
        "value": "Item 3",
-       "text": "Porque ayuda a la producción de vitamina C en la piel y se utiliza para calentar el agua en las casas."
+       "text": "Porque ayuda a la producción de vitamina C en la piel y se utiliza para calentar el agua en las casas.",
+            "puntos": {
+            "lectura_escritura": 30,
+            "aprendizaje_logico": 20,
       },
+        },
       {
        "value": "Item 4",
-       "text": "Porque es el planeta más cercano a la Tierra y su energía se utiliza para el transporte."
-      }
+       "text": "Porque es el planeta más cercano a la Tierra y su energía se utiliza para el transporte.",
+            "puntos": {
+            "lectura_escritura": 10,
+      },
+        }
      ]
     },
     {
@@ -703,20 +773,33 @@ const surveyJson = {
      "choices": [
       {
        "value": "Item 1",
-       "text": "Estación B"
+       "text": "Estación B",
+         "puntos": {
+          "aprendizaje_logico": 10,
       },
+        },
       {
        "value": "Item 2",
-       "text": "Estación A"
+       "text": "Estación A",
+            "puntos": {
+            "aprendizaje_logico": 40,
+
       },
+        },
       {
        "value": "Item 3",
-       "text": "Estación D"
+       "text": "Estación D",
+            "puntos": {
+            "aprendizaje_logico": 10,
       },
+        },
       {
        "value": "Item 4",
-       "text": "Estación C"
-      }
+       "text": "Estación C",
+            "puntos": {
+            "aprendizaje_logico": 30,
+      },
+        }
      ]
     },
     {
@@ -734,19 +817,39 @@ const surveyJson = {
      "choices": [
       {
        "value": "Item 1",
-       "text": "Libro, Lámpara, Cuaderno, Pluma, Taza"
+       "text": "Libro, Lámpara, Cuaderno, Pluma, Taza",
+         "puntos": {
+          "aprendizaje_logico": 50,
+          "concentracion": 30,
+          "creatividad": 20
+         }
       },
       {
        "value": "Item 2",
-       "text": "Pluma, Libro, Lámpara, Taza, Cuaderno"
+       "text": "Pluma, Libro, Lámpara, Taza, Cuaderno",
+            "puntos": {
+            "aprendizaje_logico": 30,
+            "concentracion": 20,
+            "creatividad": 10
+            }
       },
       {
        "value": "Item 3",
-       "text": "Libro, Pluma, Lámpara, Cuaderno, Taza"
+       "text": "Libro, Pluma, Lámpara, Cuaderno, Taza",
+            "puntos": {
+            "aprendizaje_logico": 40,
+            "concentracion": 20,
+            "creatividad": 10
+            }
       },
       {
        "value": "Item 4",
-       "text": "Cuaderno, Lámpara, Libro, Taza, Pluma"
+       "text": "Cuaderno, Lámpara, Libro, Taza, Pluma",
+            "puntos": {
+            "aprendizaje_logico": 20,
+            "concentracion": 10,
+            "creatividad": 10
+            }
       }
      ]
     }
@@ -771,20 +874,37 @@ const surveyJson = {
      "choices": [
       {
        "value": "Item 1",
-       "text": "Molesta"
+       "text": "Molesta",
+       "puntos": {
+        "emociones": 40,
+        "creatividad": 30,
+        "adaptabilidad": 20
+       }
       },
       {
        "value": "Item 2",
-       "text": "Alegre"
+       "text": "Alegre",
+       "puntos": {
+        "emociones": 10,
+       }
       },
       {
        "value": "Item 3",
-       "text": "Indiferente"
+       "text": "Indiferente",
+       "puntos": {
+        "emociones": 30,
+        "creatividad": 20,
+        "adaptabilidad": 10
       },
+        },
       {
        "value": "Item 4",
-       "text": "Aburrida"
+       "text": "Aburrida",
+         "puntos": {
+          "emociones": 20,
+          "creatividad": 10,
       },
+        },
       {
        "value": "Item 5",
        "text": "No estoy seguro/a"
@@ -806,19 +926,33 @@ const surveyJson = {
      "choices": [
       {
        "value": "Item 1",
-       "text": "Es su cumpleaño"
+       "text": "Es su cumpleaño",
+       "puntos": {
+        "emociones": 30,
+        "creatividad": 10,
+       }
       },
       {
        "value": "Item 2",
-       "text": "Tiene pastel"
+       "text": "Tiene pastel",
+         "puntos": {
+          "emociones": 20,
+          "creatividad":30,
+         }
       },
       {
        "value": "Item 3",
-       "text": "Es un fantasma"
+       "text": "Es un fantasma",
+            "puntos": {
+            "emociones": 10,
+            }
       },
       {
        "value": "Item 4",
-       "text": "Tiene un gorrito"
+       "text": "Tiene un gorrito",
+            "puntos": {
+            "emociones": 10,
+            }
       }
      ]
     }
@@ -843,20 +977,32 @@ const surveyJson = {
      "choices": [
       {
        "value": "Item 1",
-       "text": "Esperaría pacientemente hasta que llegue el autobús."
+       "text": "Esperaría pacientemente hasta que llegue el autobús.",
+         "puntos": {
+          "adaptabilidad": 20,
       },
+        },
       {
        "value": "Item 2",
-       "text": "Me pondría muy ansioso y no sabría qué hacer."
+       "text": "Me pondría muy ansioso y no sabría qué hacer.",
+            "puntos": {
+            "adaptabilidad": 10,
       },
+        },
       {
        "value": "Item 3",
-       "text": "Buscaría una alternativa, como tomar un taxi o caminar si está cerca."
+       "text": "Buscaría una alternativa, como tomar un taxi o caminar si está cerca.",
+            "puntos": {
+            "adaptabilidad": 30,
       },
+        },
       {
        "value": "Item 4",
-       "text": "Decidiría volver a casa y no ir al trabajo."
-      }
+       "text": "Decidiría volver a casa y no ir al trabajo.",
+            "puntos": {
+            "adaptabilidad": 10,
+      },
+        }
      ]
     },
     {
@@ -874,20 +1020,32 @@ const surveyJson = {
      "choices": [
       {
        "value": "Item 1",
-       "text": "Pediría direcciones a una persona cercana."
+       "text": "Pediría direcciones a una persona cercana.",
+         "puntos": {
+          "adaptabilidad": 40,
       },
+        },
       {
        "value": "Item 2",
-       "text": "Intentaría recordar el camino basado en lo que vi antes de que el teléfono se quedara sin batería."
+       "text": "Intentaría recordar el camino basado en lo que vi antes de que el teléfono se quedara sin batería.",
+            "puntos": {
+            "adaptabilidad": 20,
+            }
       },
       {
        "value": "Item 3",
-       "text": "Entraría en una tienda cercana para ver si tienen un mapa que pueda usar."
+       "text": "Entraría en una tienda cercana para ver si tienen un mapa que pueda usar.",
+            "puntos": {
+            "adaptabilidad": 30,
       },
+        },
       {
        "value": "Item 4",
-       "text": "Me sentiría abrumado y no sabría qué hacer."
-      }
+       "text": "Me sentiría abrumado y no sabría qué hacer.",
+            "puntos": {
+            "adaptabilidad": 10,
+      },
+        }
      ]
     }
    ],
@@ -928,3 +1086,4 @@ function calculatePoints(results) {
         adaptabilidad: 0,
         gestion: 0
     };
+}
