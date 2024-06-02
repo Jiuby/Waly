@@ -1,8 +1,7 @@
 
 # Waly
 
-Procedimiento de instalacion
-
+Programa acerca el analisis y el estudio de las metodologias de estudio para la gente autista, con varias actividades para poder desarollar el aprendizaje del usuario
 
 
 
