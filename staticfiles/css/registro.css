@@ -1,0 +1,334 @@
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+/* General styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: url("img/R.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: 'Exo', sans-serif;
+}
+
+/* Container styles */
+.container {
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.container header {
+  font-size: 1.5rem;
+  color: #5A82DF;
+  font-weight: 500;
+  text-align: center;
+}
+
+.container .form {
+  margin-top: 30px;
+}
+
+.form .input-box {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.input-box label {
+  color: #5A82DF;
+}
+
+.form :where(.input-box input, .select-box) {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  color: #707070;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 15px;
+}
+
+.input-box input:focus {
+  box-shadow: 0 1px 0 rgba(6, 53, 39, 0.1);
+}
+
+.form .column {
+  display: flex;
+  column-gap: 15px;
+}
+
+.form .gender-box {
+  margin-top: 20px;
+}
+
+.gender-box h3 {
+  color: #333;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.form :where(.gender-option, .gender) {
+  display: flex;
+  align-items: baseline;
+  column-gap: 50px;
+  flex-wrap: wrap;
+}
+
+.form .gender {
+  column-gap: 5px;
+}
+
+.gender input {
+  accent-color: rgb(61, 101, 212);
+}
+
+.form :where(.gender input, .gender label) {
+  cursor: pointer;
+}
+
+.gender label {
+  color: #707070;
+}
+
+.address :where(input, .select-box) {
+  margin-top: 15px;
+}
+
+.select-box select {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  color: #707070;
+  font-size: 1rem;
+}
+
+.form button {
+  height: 55px;
+  width: 100%;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #5A82DF;
+}
+
+.form button:hover {
+  background: #83a1e9;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 500px) {
+  .form .column {
+    flex-wrap: wrap;
+  }
+  .form :where(.gender-option, .gender) {
+    row-gap: 15px;
+  }
+}
+
+/* New Background animation styles */
+@keyframes animate {
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+}
+
+.background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    background: #9fa7c1;
+    overflow: hidden;
+}
+.background li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 16s linear infinite;
+}
+
+.background li:nth-child(0) {
+    left: 53%;
+    width: 227px;
+    height: 227px;
+    bottom: -227px;
+    animation-delay: 1s;
+}
+.background li:nth-child(1) {
+    left: 85%;
+    width: 205px;
+    height: 205px;
+    bottom: -205px;
+    animation-delay: 4s;
+}
+.background li:nth-child(2) {
+    left: 88%;
+    width: 236px;
+    height: 236px;
+    bottom: -236px;
+    animation-delay: 8s;
+}
+.background li:nth-child(3) {
+    left: 47%;
+    width: 204px;
+    height: 204px;
+    bottom: -204px;
+    animation-delay: 2s;
+}
+.background li:nth-child(4) {
+    left: 0%;
+    width: 193px;
+    height: 193px;
+    bottom: -193px;
+    animation-delay: 8s;
+}
+.background li:nth-child(5) {
+    left: 66%;
+    width: 198px;
+    height: 198px;
+    bottom: -198px;
+    animation-delay: 3s;
+}
+.background li:nth-child(6) {
+    left: 40%;
+    width: 228px;
+    height: 228px;
+    bottom: -228px;
+    animation-delay: 9s;
+}
+.background li:nth-child(7) {
+    left: 72%;
+    width: 163px;
+    height: 163px;
+    bottom: -163px;
+    animation-delay: 22s;
+}
+.background li:nth-child(8) {
+    left: 27%;
+    width: 226px;
+    height: 226px;
+    bottom: -226px;
+    animation-delay: 36s;
+}
+.background li:nth-child(9) {
+    left: 33%;
+    width: 226px;
+    height: 226px;
+    bottom: -226px;
+    animation-delay: 29s;
+}
+.background li:nth-child(10) {
+    left: 66%;
+    width: 213px;
+    height: 213px;
+    bottom: -213px;
+    animation-delay: 35s;
+}
+.background li:nth-child(11) {
+    left: 32%;
+    width: 206px;
+    height: 206px;
+    bottom: -206px;
+    animation-delay: 38s;
+}
+.background li:nth-child(12) {
+    left: 29%;
+    width: 234px;
+    height: 234px;
+    bottom: -234px;
+    animation-delay: 10s;
+}
+.background li:nth-child(13) {
+    left: 12%;
+    width: 168px;
+    height: 168px;
+    bottom: -168px;
+    animation-delay: 64s;
+}
+.background li:nth-child(14) {
+    left: 49%;
+    width: 148px;
+    height: 148px;
+    bottom: -148px;
+    animation-delay: 25s;
+}
+.background li:nth-child(15) {
+    left: 81%;
+    width: 164px;
+    height: 164px;
+    bottom: -164px;
+    animation-delay: 74s;
+}
+.background li:nth-child(16) {
+    left: 46%;
+    width: 200px;
+    height: 200px;
+    bottom: -200px;
+    animation-delay: 1s;
+}
+.background li:nth-child(17) {
+    left: 78%;
+    width: 163px;
+    height: 163px;
+    bottom: -163px;
+    animation-delay: 51s;
+}
+.background li:nth-child(18) {
+    left: 60%;
+    width: 185px;
+    height: 185px;
+    bottom: -185px;
+    animation-delay: 35s;
+}
+.background li:nth-child(19) {
+    left: 82%;
+    width: 173px;
+    height: 173px;
+    bottom: -173px;
+    animation-delay: 44s;
+}
+.background li:nth-child(20) {
+    left: 31%;
+    width: 225px;
+    height: 225px;
+    bottom: -225px;
+    animation-delay: 96s;
+}
