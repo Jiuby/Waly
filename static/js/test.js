@@ -1146,7 +1146,25 @@ function calculatePoints(survey) {
 
 function alertResults (sender) {
     const points = calculatePoints(sender);
-    // alert(JSON.stringify(points));
+
+    // Convertir los puntos a JSON
+    const data = JSON.stringify(points);
+
+    // Hacer la solicitud AJAX
+    $.ajax({
+        url: updateScoresUrl,
+        type: 'POST',
+        data: data,
+        contentType: 'application/json',
+        success: function(response) {
+            // Aquí puedes manejar la respuesta del servidor
+            console.log(response);
+        },
+        error: function(error) {
+            // Aquí puedes manejar los errores
+            console.log(error);
+        }
+    });
 }
 
 survey.onComplete.add(function(sender, options) {

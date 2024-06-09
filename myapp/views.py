@@ -277,3 +277,15 @@ def update_scores(request):
         except Exception as e:
             return JsonResponse({'status': 'error', 'message': str(e)})
     return JsonResponse({'status': 'invalid request'}, status=400)
+
+def get_user_data(request):
+    user = Usuario.objects.get(username=request.user.username)  # Obtiene el usuario actual
+    data = {
+        'visual': user.visual,
+        'auditivo': user.auditivo,
+        'memoria_fotografica': user.memoria_fotografica,
+        'practico': user.practico,
+        'lectura_escritura': user.lectura_escritura,
+        'aprendizaje_logico': user.aprendizaje_logico,
+    }
+    return JsonResponse(data)
