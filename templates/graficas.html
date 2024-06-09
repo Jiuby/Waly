@@ -37,6 +37,20 @@
             border-radius: 5px;
         }
     </style>
+    <style>
+  .chart-container {
+    width: 50%;
+    height: 50%;
+    margin: auto;
+  }
+</style>
+        <style>
+  .chart-container2 {
+    width: 50%;
+    height: 50%;
+    margin: auto;
+  }
+</style>
     
 </head>
 <body>
@@ -237,92 +251,13 @@
             </ul>
         </nav>
         <!-- partial -->
-           <div class="main-panel">
-                <div style="display: flex; flex-direction: column; align-items: start;">
-                    <label for="creatividad">Creatividad</label>
-                    <div class="bar-container">
-                        <div class="bar" style="width: {{ creatividad }}%;"></div>
-                    </div>
-                    <span>{{ creatividad }}</span>
-                </div>
-               <div style="display: flex; flex-direction: column; align-items: start;">
-                    <label for="creatividad">Auditivo</label>
-                    <div class="bar-container">
-                        <div class="bar" style="width: {{ auditivo }}%;"></div>
-                    </div>
-                    <span>{{ auditivo }}</span>
-                </div>
-               <div style="display: flex; flex-direction: column; align-items: start;">
-                    <label for="creatividad">Memoria Fotografica</label>
-                    <div class="bar-container">
-                        <div class="bar" style="width: {{ memoria_fotografica }}%;"></div>
-                    </div>
-                    <span>{{ memoria_fotografica }}</span>
-                </div>
-               <div style="display: flex; flex-direction: column; align-items: start;">
-                    <label for="creatividad">Emociones</label>
-                    <div class="bar-container">
-                        <div class="bar" style="width: {{ emociones }}%;"></div>
-                    </div>
-                    <span>{{ emociones }}</span>
-                </div>
-               <div style="display: flex; flex-direction: column; align-items: start;">
-                    <label for="creatividad">Visual</label>
-                    <div class="bar-container">
-                        <div class="bar" style="width: {{ visual }}%;"></div>
-                    </div>
-                    <span>{{ visual }}</span>
-                </div>
-               <div style="display: flex; flex-direction: column; align-items: start;">
-                    <label for="creatividad">Practico</label>
-                    <div class="bar-container">
-                        <div class="bar" style="width: {{ practico }}%;"></div>
-                    </div>
-                    <span>{{ practico }}</span>
-                </div>
-               <div style="display: flex; flex-direction: column; align-items: start;">
-                    <label for="creatividad">Lectura/Escritura</label>
-                    <div class="bar-container">
-                        <div class="bar" style="width: {{ lectura_escritura }}%;"></div>
-                    </div>
-                    <span>{{ lectura_escritura }}</span>
-                </div>
-               <div style="display: flex; flex-direction: column; align-items: start;">
-                    <label for="creatividad">Logico</label>
-                    <div class="bar-container">
-                        <div class="bar" style="width: {{ aprendizaje_logico }}%;"></div>
-                    </div>
-                    <span>{{ aprendizaje_logico }}</span>
-                </div>
-               <div style="display: flex; flex-direction: column; align-items: start;">
-                    <label for="creatividad">Concentracion</label>
-                    <div class="bar-container">
-                        <div class="bar" style="width: {{ concentracion }}%;"></div>
-                    </div>
-                    <span>{{ concentracion }}</span>
-                </div>
-               <div style="display: flex; flex-direction: column; align-items: start;">
-                    <label for="creatividad">Creatividad</label>
-                    <div class="bar-container">
-                        <div class="bar" style="width: {{ creatividad }}%;"></div>
-                    </div>
-                    <span>{{ creatividad }}</span>
-                </div>
-               <div style="display: flex; flex-direction: column; align-items: start;">
-                    <label for="creatividad">Adaptabilidad</label>
-                    <div class="bar-container">
-                        <div class="bar" style="width: {{ adaptabilidad }}%;"></div>
-                    </div>
-                    <span>{{ adaptabilidad }}</span>
-                </div>
-               <div style="display: flex; flex-direction: column; align-items: start;">
-                    <label for="creatividad">Gestion</label>
-                    <div class="bar-container">
-                        <div class="bar" style="width: {{ gestion }}%;"></div>
-                    </div>
-                    <span>{{ gestion }}</span>
-                </div>
+           <div class="card chart-container">
+              <canvas id="chart"></canvas>
            </div>
+            <div class="card chart-container">
+                <canvas id="newChart"></canvas>
+            </div>
+
                     
             <!-- content-wrapper ends -->
             <!-- partial:../../partials/_footer.html -->
@@ -351,6 +286,68 @@
 <!-- endinject -->
 <!-- Custom js for this page-->
 <script src="{%  static 'js/chart.js' %}"></script>
+<script>
+      const ctx = document.getElementById("chart").getContext('2d');
+      const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ["Visual", "Auditivo", "Memoria fotográfica", "Practico",
+          "Lectura/Escritura", "Aprendizaje lógico"],
+          datasets: [{
+            label: 'Conocete a ti mismo',
+            backgroundColor: 'rgba(161, 198, 247, 1)',
+            borderColor: 'rgb(47, 128, 237)',
+            data: [                {{ visual }},
+                {{ auditivo }},
+                {{ memoria_fotografica }},
+                {{ practico }},
+                {{ lectura_escritura }},
+                {{ aprendizaje_logico }},],
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true,
+              }
+            }]
+          }
+        },
+      });
+</script>
+<script>
+    const newCtx = document.getElementById("newChart").getContext('2d');
+    const newChart = new Chart(newCtx, {
+        type: 'bar', // Cambia esto al tipo de gráfico que quieras
+        data: {
+            labels: ["Empatia", "Concentración", "Creatividad", "Emociones", "Adaptabilidad", "Gestion"], // Cambia esto a las etiquetas que quieras
+            datasets: [{
+                label: 'Debemos mejorar en',
+                backgroundColor: 'rgba(161, 198, 247, 1)',
+                borderColor: 'rgb(47, 128, 237)',
+                data: [
+                    {{ empatia }},
+                    {{ concentracion }},
+                    {{ creatividad }},
+                    {{ emociones }},
+                    {{ adaptabilidad }},
+                    {{ gestion }},
+                ], // Cambia esto a los datos que quieras
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                    }
+                }]
+            }
+        },
+    });
+</script>
+
    
     
     
